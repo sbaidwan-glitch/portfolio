@@ -19,7 +19,6 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/assets/css/styles.css?v=20261010">
-<script>document.documentElement.classList.add('js');</script>
 </head>
 <body>
 <a class="skip-link" href="#main">Skip to content</a>
@@ -131,7 +130,7 @@
     <div class="wrap">
       <div class="hero-grid">
 
-        <aside class="hero-id card reveal">
+        <aside class="hero-id card">
           <img class="portrait" src="/assets/img/headshot.webp?v=20261010" alt="Samara Baidwan" width="900" height="900">
           <dl class="facts">
             <div><dt>School</dt><dd>Harvey Mudd College</dd></div>
@@ -140,7 +139,7 @@
           </dl>
         </aside>
 
-        <div class="hero-main card reveal">
+        <div class="hero-main card">
           <p class="eyebrow">Harvey Mudd College · Class of 2028</p>
           <h1 class="hero-name">Samara Baidwan</h1>
           <p class="hero-role">Electronics, Materials, &amp; Hands-On Design</p>
@@ -150,6 +149,7 @@
           <div class="hero-cta">
             <a class="btn btn-primary" href="mailto:sbaidwan@g.hmc.edu">Email me</a>
             <a class="btn btn-ghost" href="https://www.linkedin.com/in/samara-baidwan-479071383/" target="_blank" rel="noopener">LinkedIn</a>
+            <a class="btn btn-ghost" href="/assets/docs/baidwan-samara-resume.pdf" target="_blank" rel="noopener">Résumé</a>
           </div>
           <ul class="hero-focus" aria-label="Focus areas">
             <li>Hardware &amp; Electrical Systems</li>
@@ -165,11 +165,11 @@
   <!-- ============ ABOUT ============ -->
   <section class="section" id="about">
     <div class="wrap">
-      <header class="sec-head reveal">
+      <header class="sec-head">
         <p class="sec-label">About</p>
         <h2 class="sec-title">Designing, making, testing.</h2>
       </header>
-      <div class="about-card card reveal">
+      <div class="about-card card">
         <p class="lead">
           My interests are in electronics, instrumentation, and hands-on hardware development,
           especially PCB design and integrating sensors into working systems. I like taking a design
@@ -183,7 +183,7 @@
   <!-- ============ PROJECTS ============ -->
   <section class="section" id="projects">
     <div class="wrap">
-      <header class="sec-head reveal">
+      <header class="sec-head">
         <p class="sec-label">Projects</p>
         <h2 class="sec-title">Research &amp; builds</h2>
         <p class="sec-sub">Hardware, instrumentation, and robotics, plus the research behind them.</p>
@@ -192,18 +192,18 @@
       <div class="projects">
 
         <!-- Currently working on -->
-        <article class="project card reveal now-card">
-          <figure class="p-focal p-focal--render">
+        <article class="project card now-card">
+          <figure class="p-focal p-focal--render p-focal--captioned">
             <img src="/assets/img/led-board.webp?v=20261010" alt="Render of the ring-shaped LED illumination board, with white emitter packages placed around its perimeter" loading="lazy" width="1360" height="748">
+            <figcaption>LED illumination PCB — 3D layout render, work in progress.</figcaption>
           </figure>
           <div class="p-body">
             <div class="p-top">
-              <span class="date">Now · 2026</span>
-              <span class="chip">In progress</span>
+              <span class="date">Aug 2026 – present</span>
+              <span class="chip">Industry-sponsored Engineering Clinic · In progress</span>
             </div>
-            <h3>Industry sponsored project</h3>
-            <p class="one-liner">Designing the illumination boards for a surgical imaging platform.</p>
-            <p class="desc">
+            <h3>LED Illumination Electronics</h3>
+            <p class="one-liner">
               Designing LED circuit boards for a surgical imaging platform using KiCad and Autodesk
               Fusion, with a focus on illumination hardware and embedded-system integration.
             </p>
@@ -214,7 +214,7 @@
         </article>
 
         <!-- MuddSub -->
-        <article class="project card reveal">
+        <article class="project card">
           <figure class="p-focal p-focal--cutout">
             <img src="/assets/img/sub-crush.webp?v=20261010" alt="CAD model of Crush, MuddSub’s autonomous underwater vehicle" loading="lazy" width="1074" height="737">
           </figure>
@@ -248,7 +248,7 @@
         </article>
 
         <!-- Carbon-Bronze (UNSW) -->
-        <article class="project card reveal" data-bg="materials">
+        <article class="project card" data-bg="materials">
           <div class="p-media-col">
             <figure class="p-focal p-focal--captioned">
               <img src="/assets/img/unsw-arcmelt.webp?v=20261010" alt="Molten carbon-bronze alloy glowing inside the chamber of a mini arc melter" loading="lazy" width="1200" height="900">
@@ -257,7 +257,7 @@
             <div class="slideshow" data-slideshow>
               <div class="slides">
                 <figure class="slide slide--video is-active">
-                  <video src="/assets/video/pin-on-disk.mp4?v=20261010" poster="/assets/img/pin-on-disk-poster.webp?v=20261010" muted loop playsinline preload="metadata" aria-label="Pin-on-disk friction testing at UNSW Sydney"></video>
+                  <video src="/assets/video/pin-on-disk.mp4?v=20261010" poster="/assets/img/pin-on-disk-poster.webp?v=20261010" controls muted loop playsinline preload="metadata" aria-label="Pin-on-disk friction testing at UNSW Sydney"></video>
                   <figcaption>Pin on disk friction testing.</figcaption>
                 </figure>
                 <img class="slide" src="/assets/img/unsw-lab2.webp?v=20261010" alt="Working in the workshop during the UNSW summer placement" loading="lazy" width="1200" height="900">
@@ -280,16 +280,24 @@
               it’s being legislated out of bushings and bearings on health and environmental grounds.
               Earlier work in the lab pointed to carbon as a replacement, but carbon barely dissolves
               in copper, so the real problem is finding compositions and heat treatments that keep
-              graphite in the microstructure. Over a summer at UNSW we made and characterized 21
-              experimental carbon-bronze alloys, using SEM and EDS to confirm the black inclusions
-              were lubricating graphite rather than hard, abrasive carbides, and hardness and
-              pin-on-disk friction testing to see how they behaved as they wore.
+              graphite in the microstructure. Over a summer at UNSW the team made and characterized 21
+              experimental carbon-bronze alloys, using SEM and EDS to check whether the black
+              inclusions were lubricating graphite or hard, abrasive carbides.
+            </p>
+            <p class="contribution">
+              <span>My contribution</span>
+              I calculated alloy compositions, prepared charges, and carried out arc melting, heat
+              treatment, metallographic preparation, optical microscopy, and hardness testing. I also
+              improved an existing MATLAB image-analysis pipeline to quantify carbon area fraction and
+              particle-size distributions across compositions and heat treatments, and refined the
+              hardness-testing procedure.
             </p>
             <p class="result">
-              <span>What we found</span>
-              Several of the 21 alloys retained significant carbon. Like a graphite pencil, they leave a
-              carbon trail when smeared across paper, a promising sign they’ll hold the self-lubricating
-              properties that bushings and bearings depend on.
+              <span>Preliminary findings</span>
+              Several of the 21 alloys retained significant carbon, and like a graphite pencil they
+              leave a carbon trail when smeared across paper. That is a preliminary sign of the
+              self-lubricating behaviour bushings and bearings depend on; a carbon mark on paper is not
+              by itself a test of bearing performance.
             </p>
             <p class="team">With <span>Katie Cheng</span> and <span>Joshua Tanksley</span> · Advisors: Prof. Lori Bassman (HMC) and Prof. Kevin Laws (UNSW Sydney)</p>
             <ul class="tags">
@@ -313,7 +321,7 @@
   <!-- ============ PAST PROJECTS ============ -->
   <section class="section" id="past">
     <div class="wrap">
-      <header class="sec-head reveal">
+      <header class="sec-head">
         <p class="sec-label">Earlier</p>
         <h2 class="sec-title">Past projects &amp; research</h2>
         <p class="sec-sub">Coursework, lab, and research projects from 2025–2026.</p>
@@ -322,7 +330,7 @@
       <div class="projects">
 
         <!-- Basilisk -->
-        <article class="project card reveal" data-bg="electronics">
+        <article class="project card" data-bg="electronics">
           <figure class="p-focal">
             <img src="/assets/img/basilisk-buoy.webp?v=20261010" alt="Basilisk floating on the water, with its cup anemometer and wind vane mounted above the frame" loading="lazy" width="1500" height="1125">
           </figure>
@@ -335,18 +343,22 @@
             <p class="one-liner">A sensor-laden floating robot that measures wind and sun offshore to help site marine renewable energy.</p>
             <p class="desc">
               Offshore wind and floating solar farms need good local data on wind speed, wind direction,
-              and solar irradiance. For E80 we built Basilisk, an autonomous surface vehicle that logs all
-              three while underway. I designed two of the three multi-sensor instrumentations, the
-              Hall-effect anemometer and magnetic weathervane, and integrated them with a Teensy 4.0 and
-              microSD logging, calibrating each sensor against reference instruments before field
-              deployment.
+              and solar irradiance. For E80 the team built Basilisk, an autonomous surface vehicle that
+              logs all three while underway.
+            </p>
+            <p class="contribution">
+              <span>My contribution</span>
+              I designed two of the vehicle’s three sensing systems, the Hall-effect anemometer and
+              magnetic wind-direction sensor, integrated them with a Teensy 4.0 and microSD logging, and
+              calibrated them against reference instruments before field deployment.
             </p>
             <p class="result">
-              <span>What we found</span>
-              Deployed at Dana Point, the vehicle showed no significant change in wind or irradiance with
-              distance from shore. Solar power density was roughly 76× wind power density in the cove. The
-              anemometer lost pulse accuracy at higher wind speeds, and the bot drifted off heading without
-              closed-loop control. Both are clear next steps.
+              <span>What we observed</span>
+              These are observations from a single deployment, not general conclusions about offshore
+              energy. At Dana Point the vehicle measured no significant change in wind or irradiance with
+              distance from shore, and solar power density in the cove was roughly 76× wind power density.
+              The anemometer lost pulse accuracy at higher wind speeds, and the vehicle drifted off
+              heading without closed-loop control. Both are clear next steps.
             </p>
             <p class="team">Team: <span>Samara Baidwan, Ava Barasch, Andy Maldonado, Felix Peng</span></p>
             <ul class="tags">
@@ -355,18 +367,22 @@
             </ul>
           </div>
           <div class="p-extra">
-            <p class="extra-note">The two sensor circuits I designed for Basilisk.</p>
+            <p class="extra-note">Sensor circuits I designed for Basilisk. Click either to open it full size.</p>
             <figure class="schematic">
-              <img src="/assets/img/e80-anemometer.webp?v=20261010" alt="Anemometer schematic: an A3144 Hall-effect sensor on 5 V with a 10 nF decoupling capacitor, its output pulled up through 10 kΩ and filtered by 100 pF into Teensy 4.0 pin A0." loading="lazy" width="1007" height="805">
+              <a class="zoom" href="/assets/img/e80-anemometer.webp" target="_blank" rel="noopener">
+                <img src="/assets/img/e80-anemometer.webp?v=20261010" alt="Anemometer circuit diagram showing an A3144 Hall-effect sensor connected to Teensy 4.0 pin A0." loading="lazy" width="1007" height="805">
+              </a>
             </figure>
             <figure class="schematic">
-              <img src="/assets/img/e80-weathervane.webp?v=20261010" alt="Wind-direction schematic: an analog magnetic sensor on 5 V with 100 nF decoupling, its output divided by R1 = 18 kΩ and R2 = 30 kΩ into Teensy 4.0 pin A1 at 0.1–3.0 V." loading="lazy" width="1012" height="805">
+              <a class="zoom" href="/assets/img/e80-weathervane.webp" target="_blank" rel="noopener">
+                <img src="/assets/img/e80-weathervane.webp?v=20261010" alt="Wind-direction sensor circuit diagram showing an analog sensor output connected through a resistor divider to Teensy 4.0 pin A1." loading="lazy" width="1012" height="805">
+              </a>
             </figure>
           </div>
         </article>
 
         <!-- Fluorescence -->
-        <article class="project project--text card reveal">
+        <article class="project project--text card">
           <div class="p-body">
             <div class="p-top">
               <span class="date">Jan – Dec 2025</span>
@@ -389,7 +405,7 @@
         </article>
 
         <!-- Lab Helper -->
-        <article class="project project--stack card reveal">
+        <article class="project project--stack card">
           <div class="p-body">
             <div class="p-top">
               <span class="date">Fall 2025 · Intro to Engineering Design</span>
@@ -432,12 +448,12 @@
   <!-- ============ MAKERSPACE ============ -->
   <section class="section" id="makerspace">
     <div class="wrap">
-      <header class="sec-head reveal">
+      <header class="sec-head">
         <p class="sec-label">Makerspace</p>
         <h2 class="sec-title">Where I build</h2>
       </header>
 
-      <article class="space-card card reveal">
+      <article class="space-card card">
         <div class="space-head">
           <span class="date">Aug 2026 – present</span>
           <span class="chip">Leadership</span>
@@ -453,8 +469,8 @@
         </p>
         <div class="stats">
           <div class="stat"><b>1,200+</b><span>makerspace users served</span></div>
-          <div class="stat"><b>50+</b><span>student stewards trained</span></div>
-          <div class="stat"><b>30+</b><span>manuals standardized</span></div>
+          <div class="stat"><b>50+</b><span>student steward team, training coordination</span></div>
+          <div class="stat"><b>30+</b><span>manuals being standardized</span></div>
         </div>
         <ul class="tags">
           <li>Laser cutting</li><li>3D printing (FDM / SLA / SLS)</li><li>Waterjet cutting</li>
@@ -468,13 +484,13 @@
   <!-- ============ INTERESTS ============ -->
   <section class="section" id="interests">
     <div class="wrap">
-      <header class="sec-head reveal">
+      <header class="sec-head">
         <p class="sec-label">Interests</p>
         <h2 class="sec-title">What I’m drawn to</h2>
       </header>
 
       <div class="interests-grid">
-        <div class="card reveal">
+        <div class="card">
           <h3 class="subhead">Research areas</h3>
           <ul class="pill-list">
             <li>Instrumentation &amp; measurement systems</li>
@@ -485,11 +501,12 @@
             <li>Design for fabrication</li>
           </ul>
         </div>
-        <div class="card reveal">
-          <h3 class="subhead">Personally</h3>
+        <div class="card">
+          <h3 class="subhead">Exploring now</h3>
           <p class="body-text">
-            I’m active in MuddSub and the Harvey Mudd Makerspace. I enjoy designing circuits, building
-            hardware with my own hands, and troubleshooting physical systems.
+            Through my AI prototyping coursework, I’m exploring full-stack web development with
+            AI-assisted tools and ways to connect physical hardware with software interfaces and AI
+            capabilities.
           </p>
         </div>
       </div>
@@ -499,22 +516,22 @@
   <!-- ============ CONTACT ============ -->
   <section class="section section-contact" id="contact">
     <div class="wrap">
-      <header class="sec-head reveal">
+      <header class="sec-head">
         <p class="sec-label">Contact</p>
         <h2 class="sec-title big">Let’s build something.</h2>
         <p class="sec-sub">Open to research, internship, and collaboration opportunities.</p>
       </header>
 
       <div class="contact-grid">
-        <a class="card contact-card reveal" href="mailto:sbaidwan@g.hmc.edu">
+        <a class="card contact-card" href="mailto:sbaidwan@g.hmc.edu">
           <span class="contact-label">Email</span>
           <span class="contact-value">sbaidwan@g.hmc.edu</span>
         </a>
-        <a class="card contact-card reveal" href="https://www.linkedin.com/in/samara-baidwan-479071383/" target="_blank" rel="noopener">
+        <a class="card contact-card" href="https://www.linkedin.com/in/samara-baidwan-479071383/" target="_blank" rel="noopener">
           <span class="contact-label">LinkedIn</span>
           <span class="contact-value">Samara Baidwan</span>
         </a>
-        <div class="card contact-card reveal">
+        <div class="card contact-card">
           <span class="contact-label">Based in</span>
           <span class="contact-value">Singapore &amp; Claremont, CA</span>
         </div>

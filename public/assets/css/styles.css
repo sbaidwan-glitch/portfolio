@@ -6,7 +6,9 @@
   --bg:#fffdfb;
   --ink:#1c1613;
   --ink-2:#6d6058;
-  --ink-3:#9c8e84;
+  /* darkened from #9c8e84, which sat at 3.2:1 on the cards and failed AA for
+     the captions, dates, and labels that use it */
+  --ink-3:#7d6f66;
   --card:#ffffff;
   --card-2:#fdf6f0;
   --border:rgba(74,40,15,.09);
@@ -256,6 +258,13 @@ h1,h2,h3{margin:0;font-weight:800;letter-spacing:-.03em;line-height:1.1;color:va
 .team span{font-weight:700;color:var(--ink)}
 .result{font-size:.86rem;color:var(--ink-2);border-radius:12px;padding:.85rem 1.1rem;margin:0 0 1.2rem;max-width:82ch;background:var(--accent-wash)}
 .result span{display:block;font-size:.7rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;margin-bottom:.3rem;color:var(--accent-ink)}
+/* what this person did, kept visually separate from what the team found so
+   the two never read as the same claim */
+.contribution{
+  font-size:.92rem;color:var(--ink-2);max-width:82ch;
+  margin:0 0 1.2rem;padding-left:1rem;border-left:3px solid var(--border-2);
+}
+.contribution span{display:block;font-size:.7rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;margin-bottom:.35rem;color:var(--ink-3)}
 .tags{display:flex;flex-wrap:wrap;gap:.4rem;margin:.2rem 0 0}
 .tags li{font-size:.77rem;font-weight:500;color:var(--ink-2);background:var(--card-2);border:1px solid var(--border);padding:.3rem .68rem;border-radius:8px}
 
@@ -307,9 +316,13 @@ h1,h2,h3{margin:0;font-weight:800;letter-spacing:-.03em;line-height:1.1;color:va
 .slide.is-active{opacity:1;z-index:1}
 .slide--video{display:block;margin:0}
 .slide--video video{width:100%;height:100%;object-fit:cover;object-position:50% 50%;display:block}
+/* the caption sits above the clip rather than below it, so it never collides
+   with the playback controls */
 .slide--video figcaption{
-  position:absolute;left:0;right:0;bottom:0;padding:1.6rem .75rem .55rem;
-  font-size:.75rem;color:#fff;background:linear-gradient(transparent,rgba(24,14,7,.75));
+  position:absolute;left:0;right:0;top:0;padding:.5rem .75rem 2rem;
+  font-size:.75rem;color:#fff;
+  /* holds enough density under the text to stay legible over a bright frame */
+  background:linear-gradient(rgba(22,13,7,.8) 0%,rgba(22,13,7,.62) 55%,transparent 100%);
 }
 .slide-dots{display:flex;gap:.1rem;margin-top:.35rem}
 .dot{width:26px;height:26px;padding:0;border:0;background:none;cursor:pointer;display:grid;place-items:center}
@@ -337,6 +350,8 @@ h1,h2,h3{margin:0;font-weight:800;letter-spacing:-.03em;line-height:1.1;color:va
 .schematic{flex:1 1 20rem;min-width:0;margin:0;display:flex;flex-direction:column;gap:.45rem}
 .schematic img{width:100%;border-radius:14px;border:1px solid var(--border);background:#fff}
 .schematic figcaption{font-size:.78rem;color:var(--ink-3)}
+.schematic .zoom{display:block;cursor:zoom-in}
+.schematic .zoom:hover img{border-color:var(--accent)}
 
 /* ---------- makerspace ---------- */
 .space-card{padding:clamp(1.6rem,3.4vw,2.6rem)}
@@ -372,10 +387,10 @@ a.contact-card:hover{transform:translateY(-5px);box-shadow:var(--shadow-lg);bord
 .footer a{color:var(--ink-2);font-weight:500;transition:color .2s}
 .footer a:hover{color:var(--accent-ink)}
 
-/* ---------- reveal (progressive enhancement) ---------- */
-.reveal{transition:opacity .7s var(--ease),transform .7s var(--ease)}
-.js .reveal{opacity:0;transform:translateY(20px)}
-.js .reveal.in{opacity:1;transform:none}
+/* sections are never hidden on approach: an entrance fade means content is
+   unreadable for as long as it runs, and the page has to work on a slow
+   scroll and an anchor jump alike */
+section[id]{scroll-margin-top:6.5rem}
 
 /* ---------- responsive ---------- */
 @media (max-width:900px){
@@ -397,7 +412,6 @@ a.contact-card:hover{transform:translateY(-5px);box-shadow:var(--shadow-lg);bord
 @media (prefers-reduced-motion:reduce){
   *,*::before,*::after{animation-duration:.001ms !important;transition-duration:.001ms !important}
   html{scroll-behavior:auto}
-  .js .reveal{opacity:1;transform:none}
   /* an infinite spin at .001ms would loop hard, so stop these outright and
      leave the background art parked */
   .bg .gear,.bg .slip-upper,.bg .pulse{animation:none !important}

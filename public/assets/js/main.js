@@ -8,22 +8,9 @@
      entry still clears the highlight rather than leaving the one above lit */
   const sections = [...document.querySelectorAll('section[id]')];
 
-  const reveals = [...document.querySelectorAll('.reveal')];
   const bg = document.querySelector('.bg');
   const sceneMarkers = [...document.querySelectorAll('[data-bg]')];
   const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-
-  /* reveal: driven by scroll position, so fast scrolling / anchor jumps
-     can never leave content stranded at opacity 0 (an IntersectionObserver
-     coalesces callbacks and can miss sections during fast programmatic scroll) */
-  const revealPass = () => {
-    const vh = window.innerHeight;
-    for (const el of reveals) {
-      if (el.classList.contains('in')) continue;
-      const r = el.getBoundingClientRect();
-      if (r.top < vh * 0.92 && r.bottom > 0) el.classList.add('in');
-    }
-  };
 
   const setActive = () => {
     const mark = window.scrollY + window.innerHeight * 0.35;
@@ -51,7 +38,6 @@
 
   const onScroll = () => {
     nav.classList.toggle('scrolled', window.scrollY > 12);
-    revealPass();
     setActive();
     setScene();
   };
@@ -63,12 +49,8 @@
     requestAnimationFrame(() => { onScroll(); ticking = false; });
   };
 
-  if (reduceMotion) {
-    reveals.forEach(el => el.classList.add('in'));
-  } else {
-    window.addEventListener('scroll', requestTick, { passive: true });
-    window.addEventListener('resize', requestTick);
-  }
+  window.addEventListener('scroll', requestTick, { passive: true });
+  window.addEventListener('resize', requestTick);
   window.addEventListener('load', requestTick);
   onScroll();
 
