@@ -9,6 +9,8 @@
     .filter(Boolean);
 
   const reveals = [...document.querySelectorAll('.reveal')];
+  const bg = document.querySelector('.bg');
+  const sceneMarkers = [...document.querySelectorAll('[data-bg]')];
   const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
   /* reveal: driven by scroll position, so fast scrolling / anchor jumps
@@ -34,10 +36,24 @@
     }
   };
 
+  /* background scene: whichever marked card crosses the middle of the
+     viewport owns it, and everything else falls back to the gears */
+  const setScene = () => {
+    if (!bg) return;
+    const line = window.innerHeight * 0.5;
+    let name = 'gears';
+    for (const el of sceneMarkers) {
+      const r = el.getBoundingClientRect();
+      if (r.top <= line && r.bottom >= line) { name = el.dataset.bg; break; }
+    }
+    if (bg.dataset.scene !== name) bg.dataset.scene = name;
+  };
+
   const onScroll = () => {
     nav.classList.toggle('scrolled', window.scrollY > 12);
     revealPass();
     setActive();
+    setScene();
   };
 
   let ticking = false;
@@ -68,6 +84,41 @@
       menu.hidden = true;
     }));
   }
+
+  /* slideshow: without JS the first slide stays put and the dots do nothing */
+  document.querySelectorAll('[data-slideshow]').forEach(box => {
+    const slides = [...box.querySelectorAll('.slide')];
+    const dots = [...box.querySelectorAll('.dot')];
+    if (slides.length < 2 || dots.length !== slides.length) return;
+
+    let i = 0, timer = null;
+
+    const show = n => {
+      i = (n + slides.length) % slides.length;
+      slides.forEach((s, k) => s.classList.toggle('is-active', k === i));
+      dots.forEach((d, k) => {
+        d.classList.toggle('is-active', k === i);
+        d.setAttribute('aria-selected', String(k === i));
+      });
+    };
+
+    const start = () => {
+      if (reduceMotion) return;
+      stop();
+      timer = setInterval(() => show(i + 1), 4200);
+    };
+    const stop = () => { if (timer) { clearInterval(timer); timer = null; } };
+
+    dots.forEach((d, k) => d.addEventListener('click', () => { show(k); start(); }));
+    box.addEventListener('mouseenter', stop);
+    box.addEventListener('mouseleave', start);
+    box.addEventListener('focusin', stop);
+    box.addEventListener('focusout', start);
+    document.addEventListener('visibilitychange', () => document.hidden ? stop() : start());
+
+    show(0);
+    start();
+  });
 
   const year = document.getElementById('year');
   if (year) year.textContent = new Date().getFullYear();

@@ -17,6 +17,8 @@
   --accent-wash:rgba(232,89,12,.10);
   --team-ink:#9a3412;
   --team-wash:rgba(154,52,18,.12);
+  /* the blue the site wore before the warm rework, kept for background art */
+  --decor:#2f8ae8;
   --radius:22px;
   --radius-sm:14px;
   --shadow-sm:0 1px 2px rgba(80,40,10,.05),0 6px 16px -10px rgba(80,40,10,.16);
@@ -55,6 +57,10 @@ h1,h2,h3{margin:0;font-weight:800;letter-spacing:-.03em;line-height:1.1;color:va
 /* ---------- background ---------- */
 .bg{
   position:fixed;inset:0;z-index:-1;overflow:hidden;
+  /* the strip of background the page cards do not cover. the art below is
+     sized to it, so it stays whole instead of vanishing under the cards on a
+     narrower screen. */
+  --gutter:calc((100vw - var(--maxw)) / 2 + 1.6rem);
   background:
     radial-gradient(900px 620px at 8% 2%, rgba(253,186,116,.40), transparent 60%),
     radial-gradient(1100px 720px at 92% 0%, rgba(251,146,60,.22), transparent 62%),
@@ -70,38 +76,59 @@ h1,h2,h3{margin:0;font-weight:800;letter-spacing:-.03em;line-height:1.1;color:va
   opacity:.7;
 }
 
-/* ---------- background whimsy: gears and a discharging capacitor ---------- */
-.bg .gear,.bg .cap{
-  position:absolute;color:var(--accent);
-  fill:none;stroke:currentColor;stroke-linejoin:round;
+/* ---------- background whimsy ----------
+   line art sits in the old blue rather than the warm accent, so it reads as
+   a layer behind the page instead of competing with it. Each scene fades in
+   as its section reaches the middle of the viewport. */
+.bg .scene{
+  position:absolute;inset:0;
+  color:var(--decor);
+  opacity:0;visibility:hidden;
+  transition:opacity 1.1s var(--ease),visibility 0s linear 1.1s;
+}
+.bg[data-scene="gears"] .scene--gears,
+.bg[data-scene="materials"] .scene--materials,
+.bg[data-scene="electronics"] .scene--electronics{
+  opacity:1;visibility:visible;
+  transition:opacity 1.1s var(--ease),visibility 0s;
+}
+.bg .scene svg{
+  position:absolute;fill:none;stroke:currentColor;stroke-linejoin:round;
   pointer-events:none;
 }
-.bg .gear{stroke-width:4.5;opacity:.055}
+
+/* gears */
+.bg .gear{stroke-width:4.5;opacity:.10}
 .gear--a{width:min(46vw,560px);top:-7%;left:-10%;animation:spin-cw 160s linear infinite}
 .gear--b{width:min(34vw,420px);top:34%;right:-9%;animation:spin-ccw 200s linear infinite}
 .gear--c{width:min(26vw,300px);bottom:-7%;left:20%;animation:spin-cw 130s linear infinite}
 @keyframes spin-cw{to{transform:rotate(360deg)}}
 @keyframes spin-ccw{to{transform:rotate(-360deg)}}
 
-.bg .cap{
-  width:min(28vw,280px);bottom:11%;right:7%;
-  stroke-width:4;stroke-linecap:round;
+/* slip planes: a lattice sheared along a slip plane, with edge dislocations */
+.motif--slip{width:clamp(160px,var(--gutter),320px);top:6%;right:-2%;stroke-width:0;opacity:.5}
+.slip-atoms{fill:currentColor;stroke:none}
+.slip-plane,.slip-arrow{opacity:.55}
+.slip-lower,.slip-upper{fill:url(#slipDots);stroke:none}
+.slip-upper{animation:slip 30s ease-in-out infinite}
+.slip-lines{stroke-width:2.5;stroke-linecap:round}
+.motif--dislocations{width:clamp(90px,var(--gutter),140px);bottom:8%;left:0;stroke-width:2.5;stroke-linecap:round;opacity:.5}
+@keyframes slip{
+  0%,38%,100%{transform:translateX(0)}
+  54%,74%{transform:translateX(26px)}
 }
-.cap-wire{opacity:.10;animation:cap-charge 7.5s ease-in-out infinite}
-.cap-node{fill:currentColor;stroke:none;opacity:.12}
-/* the arc only shows for a moment, right as the plates let go */
-.cap-spark{opacity:0;stroke-width:3.5;animation:cap-arc 7.5s ease-in-out infinite}
-@keyframes cap-charge{
-  0%,45%{opacity:.10}
-  62%{opacity:.21}
-  66%{opacity:.10}
-  100%{opacity:.10}
-}
-@keyframes cap-arc{
-  0%,58%{opacity:0}
-  63%{opacity:.34}
-  68%{opacity:0}
-  100%{opacity:0}
+
+/* instrumentation: an op-amp on the left of the page, and a supply running
+   through a resistor, a capacitor and an IC down the right edge */
+.motif--opamp{width:clamp(120px,var(--gutter),180px);top:24%;left:0;stroke-width:2.5;stroke-linecap:round;opacity:.5}
+.motif--circuit{width:clamp(140px,var(--gutter),220px);bottom:4%;right:0;stroke-width:2.5;stroke-linecap:round;opacity:.5}
+.ic,.node{stroke-width:2.5}
+.node{fill:currentColor}
+.pulse{fill:currentColor;stroke:none;animation:pulse-down 6.2s linear infinite}
+@keyframes pulse-down{
+  0%{transform:translateY(0);opacity:0}
+  10%,88%{opacity:.95}
+  100%{transform:translateY(660px);opacity:0}
 }
 
 /* ---------- nav ---------- */
@@ -256,14 +283,28 @@ h1,h2,h3{margin:0;font-weight:800;letter-spacing:-.03em;line-height:1.1;color:va
 .media video{background:#12100e}
 .media figcaption{font-size:.78rem;color:var(--ink-3)}
 
-/* a stacked media block: one wide figure, then a row beneath it */
-.p-media-stack{flex:1 1 100%;display:flex;flex-direction:column;gap:clamp(.9rem,2vw,1.2rem)}
-.p-media-stack>.media{flex:0 0 auto}
-/* side by side, so the pair is cropped to a matching frame rather than
-   sitting at ragged heights */
-.p-gallery--pair .media img{aspect-ratio:4/3;object-fit:cover;object-position:50% 45%}
+/* a media column that holds a captioned focal image plus a reel beneath it */
+.p-media-col{flex:1 1 36%;max-width:420px;display:flex;flex-direction:column;gap:clamp(.8rem,1.8vw,1.1rem)}
+.p-focal--captioned{display:flex;flex-direction:column;gap:.5rem;border:0;background:none;overflow:visible}
+.p-focal--captioned img{border-radius:16px;border:1px solid var(--border);background:var(--card-2)}
+.p-focal--captioned figcaption{font-size:.78rem;color:var(--ink-3)}
 
-.card-links{display:flex;flex-wrap:wrap;align-items:center;gap:.5rem 1.5rem}
+/* slideshow */
+.slideshow{flex:0 0 auto;width:100%}
+.slides{
+  position:relative;aspect-ratio:4/3;border-radius:14px;overflow:hidden;
+  border:1px solid var(--border);background:var(--card-2);
+}
+/* stacked rather than display:none, so every slide is laid out and lazy-loads
+   while the reel is still off-screen instead of popping in mid-rotation */
+.slide{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 38%;opacity:0;transition:opacity .5s var(--ease)}
+.slide.is-active{opacity:1;z-index:1}
+.slide-dots{display:flex;gap:.1rem;margin-top:.35rem}
+.dot{width:26px;height:26px;padding:0;border:0;background:none;cursor:pointer;display:grid;place-items:center}
+.dot::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--border-2);transition:background .25s,transform .25s var(--ease)}
+.dot.is-active::before{background:var(--accent);transform:scale(1.3)}
+
+.card-links{display:flex;flex-wrap:wrap;align-items:center;gap:.5rem 1.5rem;margin-top:1.2rem}
 .conf-note{font-size:.85rem;font-weight:600;color:var(--accent-ink);margin:0}
 
 /* extra row (e.g. the UNSW photo reel) */
@@ -336,7 +377,7 @@ a.contact-card:hover{transform:translateY(-5px);box-shadow:var(--shadow-lg);bord
   .facts>div{flex-direction:column;align-items:flex-start;gap:.15rem;padding-bottom:.6rem}
   .facts dd{text-align:left}
   .about-card,.interests-grid,.contact-grid{grid-template-columns:1fr}
-  .p-focal{flex:1 1 100%;max-width:none}
+  .p-focal,.p-media-col{flex:1 1 100%;max-width:none}
   .stats{grid-template-columns:1fr;gap:.7rem}
 }
 @media (min-width:901px){.mobile-menu{display:none !important}}
@@ -346,7 +387,6 @@ a.contact-card:hover{transform:translateY(-5px);box-shadow:var(--shadow-lg);bord
   html{scroll-behavior:auto}
   .js .reveal{opacity:1;transform:none}
   /* an infinite spin at .001ms would loop hard, so stop these outright and
-     leave the gears parked and the capacitor mid-charge */
-  .bg .gear,.bg .cap-wire,.bg .cap-spark{animation:none !important}
-  .bg .cap-spark{opacity:0}
+     leave the background art parked */
+  .bg .gear,.bg .slip-upper,.bg .pulse{animation:none !important}
 }

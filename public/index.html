@@ -24,35 +24,74 @@
 <body>
 <a class="skip-link" href="#main">Skip to content</a>
 
-<div class="bg" aria-hidden="true">
+<div class="bg" data-scene="gears" aria-hidden="true">
   <div class="dots"></div>
 
-  <svg class="gear gear--a" viewBox="0 0 400 400">
-    <path d="M367.3 184.9 L367.3 215.1 L334.4 220.7 L330.1 239.7 L357.3 259.0 L344.2 286.2 L312.1 276.9 L300.0 292.2 L316.1 321.4 L292.6 340.2 L267.6 318.0 L250.1 326.4 L251.9 359.8 L222.6 366.5 L209.8 335.6 L190.2 335.6 L177.4 366.5 L148.1 359.8 L149.9 326.4 L132.4 318.0 L107.4 340.2 L83.9 321.4 L100.0 292.2 L87.9 276.9 L55.8 286.2 L42.7 259.0 L69.9 239.7 L65.6 220.7 L32.7 215.1 L32.7 184.9 L65.6 179.3 L69.9 160.3 L42.7 141.0 L55.8 113.8 L87.9 123.1 L100.0 107.8 L83.9 78.6 L107.4 59.8 L132.4 82.0 L149.9 73.6 L148.1 40.2 L177.4 33.5 L190.2 64.4 L209.8 64.4 L222.6 33.5 L251.9 40.2 L250.1 73.6 L267.6 82.0 L292.6 59.8 L316.1 78.6 L300.0 107.8 L312.1 123.1 L344.2 113.8 L357.3 141.0 L330.1 160.3 L334.4 179.3 Z"/>
-    <circle cx="200" cy="200" r="54"/>
-  </svg>
+  <!-- default: gears -->
+  <div class="scene scene--gears">
+    <svg class="gear gear--a" viewBox="0 0 400 400">
+      <path d="M367.3 184.9 L367.3 215.1 L334.4 220.7 L330.1 239.7 L357.3 259.0 L344.2 286.2 L312.1 276.9 L300.0 292.2 L316.1 321.4 L292.6 340.2 L267.6 318.0 L250.1 326.4 L251.9 359.8 L222.6 366.5 L209.8 335.6 L190.2 335.6 L177.4 366.5 L148.1 359.8 L149.9 326.4 L132.4 318.0 L107.4 340.2 L83.9 321.4 L100.0 292.2 L87.9 276.9 L55.8 286.2 L42.7 259.0 L69.9 239.7 L65.6 220.7 L32.7 215.1 L32.7 184.9 L65.6 179.3 L69.9 160.3 L42.7 141.0 L55.8 113.8 L87.9 123.1 L100.0 107.8 L83.9 78.6 L107.4 59.8 L132.4 82.0 L149.9 73.6 L148.1 40.2 L177.4 33.5 L190.2 64.4 L209.8 64.4 L222.6 33.5 L251.9 40.2 L250.1 73.6 L267.6 82.0 L292.6 59.8 L316.1 78.6 L300.0 107.8 L312.1 123.1 L344.2 113.8 L357.3 141.0 L330.1 160.3 L334.4 179.3 Z"/>
+      <circle cx="200" cy="200" r="54"/>
+    </svg>
+    <svg class="gear gear--b" viewBox="0 0 400 400">
+      <path d="M348.8 181.2 L348.8 218.8 L309.5 223.7 L302.5 245.1 L331.4 272.3 L309.3 302.7 L274.6 283.5 L256.4 296.8 L263.9 335.7 L228.1 347.3 L211.2 311.4 L188.8 311.4 L171.9 347.3 L136.1 335.7 L143.6 296.8 L125.4 283.5 L90.7 302.7 L68.6 272.3 L97.5 245.1 L90.5 223.7 L51.2 218.8 L51.2 181.2 L90.5 176.3 L97.5 154.9 L68.6 127.7 L90.7 97.3 L125.4 116.5 L143.6 103.2 L136.1 64.3 L171.9 52.7 L188.8 88.6 L211.2 88.6 L228.1 52.7 L263.9 64.3 L256.4 103.2 L274.6 116.5 L309.3 97.3 L331.4 127.7 L302.5 154.9 L309.5 176.3 Z"/>
+      <circle cx="200" cy="200" r="48"/>
+    </svg>
+    <svg class="gear gear--c" viewBox="0 0 400 400">
+      <path d="M359.6 188.8 L359.6 211.2 L337.0 216.3 L334.4 231.5 L353.8 244.1 L346.2 265.1 L323.2 262.2 L315.5 275.6 L329.4 294.0 L315.1 311.1 L294.5 300.6 L282.7 310.5 L289.5 332.6 L270.1 343.8 L254.4 326.8 L239.9 332.1 L238.7 355.2 L216.7 359.1 L207.7 337.8 L192.3 337.8 L183.3 359.1 L161.3 355.2 L160.1 332.1 L145.6 326.8 L129.9 343.8 L110.5 332.6 L117.3 310.5 L105.5 300.6 L84.9 311.1 L70.6 294.0 L84.5 275.6 L76.8 262.2 L53.8 265.1 L46.2 244.1 L65.6 231.5 L63.0 216.3 L40.4 211.2 L40.4 188.8 L63.0 183.7 L65.6 168.5 L46.2 155.9 L53.8 134.9 L76.8 137.8 L84.5 124.4 L70.6 106.0 L84.9 88.9 L105.5 99.4 L117.3 89.5 L110.5 67.4 L129.9 56.2 L145.6 73.2 L160.1 67.9 L161.3 44.8 L183.3 40.9 L192.3 62.2 L207.7 62.2 L216.7 40.9 L238.7 44.8 L239.9 67.9 L254.4 73.2 L270.1 56.2 L289.5 67.4 L282.7 89.5 L294.5 99.4 L315.1 88.9 L329.4 106.0 L315.5 124.4 L323.2 137.8 L346.2 134.9 L353.8 155.9 L334.4 168.5 L337.0 183.7 Z"/>
+      <circle cx="200" cy="200" r="60"/>
+    </svg>
+  </div>
 
-  <svg class="gear gear--b" viewBox="0 0 400 400">
-    <path d="M348.8 181.2 L348.8 218.8 L309.5 223.7 L302.5 245.1 L331.4 272.3 L309.3 302.7 L274.6 283.5 L256.4 296.8 L263.9 335.7 L228.1 347.3 L211.2 311.4 L188.8 311.4 L171.9 347.3 L136.1 335.7 L143.6 296.8 L125.4 283.5 L90.7 302.7 L68.6 272.3 L97.5 245.1 L90.5 223.7 L51.2 218.8 L51.2 181.2 L90.5 176.3 L97.5 154.9 L68.6 127.7 L90.7 97.3 L125.4 116.5 L143.6 103.2 L136.1 64.3 L171.9 52.7 L188.8 88.6 L211.2 88.6 L228.1 52.7 L263.9 64.3 L256.4 103.2 L274.6 116.5 L309.3 97.3 L331.4 127.7 L302.5 154.9 L309.5 176.3 Z"/>
-    <circle cx="200" cy="200" r="48"/>
-  </svg>
+  <!-- materials research: a lattice slipping along a slip plane -->
+  <div class="scene scene--materials">
+    <svg class="motif motif--slip" viewBox="300 0 260 400">
+      <defs>
+        <pattern id="slipDots" width="32" height="32" patternUnits="userSpaceOnUse">
+          <circle class="slip-atoms" cx="16" cy="16" r="4.5"/>
+        </pattern>
+      </defs>
+      <rect class="slip-lower" x="0" y="200" width="560" height="200" fill="url(#slipDots)"/>
+      <rect class="slip-upper" x="0" y="0" width="560" height="184" fill="url(#slipDots)"/>
+      <g class="slip-lines">
+        <path class="slip-plane" d="M0 192 H560"/>
+        <path class="slip-arrow" d="M398 88 H468 M454 74 L468 88 L454 102"/>
+        <path class="slip-arrow" d="M468 296 H398 M412 282 L398 296 L412 310"/>
+      </g>
+    </svg>
+    <svg class="motif motif--dislocations" viewBox="0 0 140 420">
+      <path d="M32 18 V138 M18 18 H46"/>
+      <path d="M104 74 V194 M90 74 H118"/>
+      <path d="M44 208 V328 M30 208 H58"/>
+      <path d="M100 264 V384 M86 264 H114"/>
+    </svg>
+  </div>
 
-  <svg class="gear gear--c" viewBox="0 0 400 400">
-    <path d="M359.6 188.8 L359.6 211.2 L337.0 216.3 L334.4 231.5 L353.8 244.1 L346.2 265.1 L323.2 262.2 L315.5 275.6 L329.4 294.0 L315.1 311.1 L294.5 300.6 L282.7 310.5 L289.5 332.6 L270.1 343.8 L254.4 326.8 L239.9 332.1 L238.7 355.2 L216.7 359.1 L207.7 337.8 L192.3 337.8 L183.3 359.1 L161.3 355.2 L160.1 332.1 L145.6 326.8 L129.9 343.8 L110.5 332.6 L117.3 310.5 L105.5 300.6 L84.9 311.1 L70.6 294.0 L84.5 275.6 L76.8 262.2 L53.8 265.1 L46.2 244.1 L65.6 231.5 L63.0 216.3 L40.4 211.2 L40.4 188.8 L63.0 183.7 L65.6 168.5 L46.2 155.9 L53.8 134.9 L76.8 137.8 L84.5 124.4 L70.6 106.0 L84.9 88.9 L105.5 99.4 L117.3 89.5 L110.5 67.4 L129.9 56.2 L145.6 73.2 L160.1 67.9 L161.3 44.8 L183.3 40.9 L192.3 62.2 L207.7 62.2 L216.7 40.9 L238.7 44.8 L239.9 67.9 L254.4 73.2 L270.1 56.2 L289.5 67.4 L282.7 89.5 L294.5 99.4 L315.1 88.9 L329.4 106.0 L315.5 124.4 L323.2 137.8 L346.2 134.9 L353.8 155.9 L334.4 168.5 L337.0 183.7 Z"/>
-    <circle cx="200" cy="200" r="60"/>
-  </svg>
-
-  <svg class="cap" viewBox="0 0 260 130">
-    <g class="cap-wire">
-      <path d="M8 65 H92"/>
-      <path d="M168 65 H252"/>
-      <path d="M92 22 V108"/>
-      <path d="M168 22 V108"/>
-    </g>
-    <path class="cap-spark" d="M130 16 L114 60 L136 56 L120 114"/>
-    <circle class="cap-node" cx="8" cy="65" r="5"/>
-    <circle class="cap-node" cx="252" cy="65" r="5"/>
-  </svg>
+  <!-- instrumentation: an op-amp, and a signal running down a schematic column -->
+  <div class="scene scene--electronics">
+    <svg class="motif motif--opamp" viewBox="0 0 180 250">
+      <path d="M30 25 L30 225 L160 125 Z"/>
+      <path d="M-10 75 H30 M-10 175 H30"/>
+      <path d="M160 125 H176"/>
+      <path d="M44 75 H62"/>
+      <path d="M53 166 V184 M44 175 H62"/>
+    </svg>
+    <svg class="motif motif--circuit" viewBox="0 0 220 620">
+      <path d="M140 -20 V58"/>
+      <path d="M140 58 L118 72 L162 86 L118 100 L162 114 L140 128"/>
+      <path d="M140 128 V168"/>
+      <circle class="node" cx="140" cy="148" r="5"/>
+      <path d="M95 168 H185"/>
+      <path d="M95 192 H185"/>
+      <path d="M140 192 V232"/>
+      <rect class="ic" x="85" y="232" width="110" height="100" rx="12"/>
+      <path d="M63 258 H83 M63 282 H83 M63 306 H83"/>
+      <path d="M197 258 H217 M197 282 H217 M197 306 H217"/>
+      <path d="M140 332 V382"/>
+      <path d="M108 382 H172 M120 396 H160 M132 410 H148"/>
+      <circle class="pulse" cx="140" cy="-20" r="5"/>
+    </svg>
+  </div>
 </div>
 
 <header class="nav" id="nav">
@@ -190,6 +229,14 @@
               electronics and waterproofing — and I work with club leadership to keep dependencies clear
               across the mechanical, electrical, and software subteams.
             </p>
+            <p class="result">
+              <span>What we’re building next</span>
+              I’m leading MuddSub’s mechanical team in turning Crush’s existing designs into a working
+              assembly: milling enclosure panels, refining latch alignment and custom waterproof seals,
+              and developing adjustable electronics mounts using poka-yoke principles. Alongside this
+              work, I’m guiding our mission-actuator team in developing gripper and torpedo mechanisms
+              for bench and underwater testing.
+            </p>
             <ul class="tags">
               <li>SolidWorks</li><li>Machining</li><li>Enclosure design</li><li>Actuator prototyping</li>
               <li>Waterproofing</li><li>Electronics integration</li>
@@ -198,7 +245,23 @@
         </article>
 
         <!-- Carbon-Bronze (UNSW) -->
-        <article class="project project--stack card reveal">
+        <article class="project card reveal" data-bg="materials">
+          <div class="p-media-col">
+            <figure class="p-focal p-focal--captioned">
+              <img src="/assets/img/unsw-arcmelt.webp?v=20261009" alt="Molten carbon-bronze alloy glowing inside the chamber of a mini arc melter" loading="lazy" width="1200" height="900">
+              <figcaption>Melting together Cu alloy in mini arc melter.</figcaption>
+            </figure>
+            <div class="slideshow" data-slideshow>
+              <div class="slides">
+                <img class="slide is-active" src="/assets/img/unsw-lab1.webp?v=20261009" alt="Running the arc melter in the UNSW lab" loading="lazy" width="900" height="1200">
+                <img class="slide" src="/assets/img/unsw-lab2.webp?v=20261009" alt="Working in the workshop during the UNSW summer placement" loading="lazy" width="1200" height="900">
+              </div>
+              <div class="slide-dots" role="tablist" aria-label="Photos from the UNSW summer research">
+                <button class="dot is-active" type="button" role="tab" aria-selected="true" aria-label="Photo 1"></button>
+                <button class="dot" type="button" role="tab" aria-selected="false" aria-label="Photo 2"></button>
+              </div>
+            </div>
+          </div>
           <div class="p-body">
             <div class="p-top">
               <span class="date">Summer 2026 · UNSW Sydney</span>
@@ -227,22 +290,6 @@
               <li>MATLAB</li><li>Arc melting</li><li>Heat treatment</li><li>Metallography</li>
               <li>Optical microscopy</li><li>SEM &amp; EDS</li><li>Hardness testing</li><li>Pin-on-disk friction</li>
             </ul>
-          </div>
-          <div class="p-media-stack">
-            <figure class="media">
-              <img src="/assets/img/unsw-arcmelt.webp?v=20261009" alt="Molten carbon-bronze alloy glowing inside the chamber of a mini arc melter" loading="lazy" width="1200" height="900">
-              <figcaption>Melting together Cu alloy in mini arc melter.</figcaption>
-            </figure>
-            <div class="p-gallery p-gallery--pair">
-              <figure class="media">
-                <img src="/assets/img/unsw-lab1.webp?v=20261009" alt="Running the arc melter in the UNSW lab" loading="lazy" width="900" height="1200">
-                <figcaption>Running the arc melter at UNSW Sydney.</figcaption>
-              </figure>
-              <figure class="media">
-                <img src="/assets/img/unsw-lab2.webp?v=20261009" alt="Working in the workshop during the UNSW summer placement" loading="lazy" width="1200" height="900">
-                <figcaption>In the workshop during the summer placement.</figcaption>
-              </figure>
-            </div>
             <div class="card-links">
               <p class="conf-note">Attending TMS Conference 2027.</p>
               <a class="link-out" href="/assets/docs/hmc-poster-2026.pdf" target="_blank" rel="noopener">
@@ -254,7 +301,7 @@
         </article>
 
         <!-- Basilisk -->
-        <article class="project card reveal">
+        <article class="project card reveal" data-bg="electronics">
           <figure class="p-focal">
             <img src="/assets/img/basilisk-buoy.webp?v=20261009" alt="Basilisk floating on the water, with its cup anemometer and wind vane mounted above the frame" loading="lazy" width="1500" height="1125">
           </figure>
