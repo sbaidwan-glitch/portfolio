@@ -274,6 +274,12 @@ h1,h2,h3{margin:0;font-weight:800;letter-spacing:-.03em;line-height:1.1;color:va
 .p-focal--cutout img{aspect-ratio:auto;object-fit:contain}
 .p-focal--cutout:hover img{transform:none}
 
+/* a landscape render carrying its own generated background keeps that
+   background and its own aspect ratio, so nothing in the model is cropped */
+.p-focal--render{max-width:460px}
+.p-focal--render img{aspect-ratio:1360/748;object-fit:cover}
+.p-focal--render:hover img{transform:none}
+
 /* media gallery (video + CAD renders) */
 .p-gallery{display:flex;flex-wrap:wrap;gap:clamp(.9rem,2vw,1.2rem) clamp(1rem,2.4vw,2rem);align-items:flex-start}
 .project--stack .p-gallery{flex:1 1 100%}
@@ -299,6 +305,12 @@ h1,h2,h3{margin:0;font-weight:800;letter-spacing:-.03em;line-height:1.1;color:va
    while the reel is still off-screen instead of popping in mid-rotation */
 .slide{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 38%;opacity:0;transition:opacity .5s var(--ease)}
 .slide.is-active{opacity:1;z-index:1}
+.slide--video{display:block;margin:0}
+.slide--video video{width:100%;height:100%;object-fit:cover;object-position:50% 50%;display:block}
+.slide--video figcaption{
+  position:absolute;left:0;right:0;bottom:0;padding:1.6rem .75rem .55rem;
+  font-size:.75rem;color:#fff;background:linear-gradient(transparent,rgba(24,14,7,.75));
+}
 .slide-dots{display:flex;gap:.1rem;margin-top:.35rem}
 .dot{width:26px;height:26px;padding:0;border:0;background:none;cursor:pointer;display:grid;place-items:center}
 .dot::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--border-2);transition:background .25s,transform .25s var(--ease)}

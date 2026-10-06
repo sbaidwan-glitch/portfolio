@@ -4,9 +4,9 @@
   const menu = document.getElementById('mobile-menu');
   const links = [...document.querySelectorAll('.nav-links a')];
 
-  const sections = links
-    .map(l => document.querySelector(l.getAttribute('href')))
-    .filter(Boolean);
+  /* every section, not just the linked ones, so a section without a nav
+     entry still clears the highlight rather than leaving the one above lit */
+  const sections = [...document.querySelectorAll('section[id]')];
 
   const reveals = [...document.querySelectorAll('.reveal')];
   const bg = document.querySelector('.bg');
@@ -95,17 +95,27 @@
 
     const show = n => {
       i = (n + slides.length) % slides.length;
-      slides.forEach((s, k) => s.classList.toggle('is-active', k === i));
+      slides.forEach((s, k) => {
+        s.classList.toggle('is-active', k === i);
+        const v = s.querySelector('video');
+        if (!v) return;
+        if (k === i && !reduceMotion) v.play().catch(() => {});
+        else v.pause();
+      });
       dots.forEach((d, k) => {
         d.classList.toggle('is-active', k === i);
         d.setAttribute('aria-selected', String(k === i));
       });
     };
 
+    /* a slide carrying a clip holds the reel rather than rotating away
+       mid-play; the dots still move the visitor on */
+    const advance = () => { if (!slides[i].querySelector('video')) show(i + 1); };
+
     const start = () => {
       if (reduceMotion) return;
       stop();
-      timer = setInterval(() => show(i + 1), 4200);
+      timer = setInterval(advance, 4200);
     };
     const stop = () => { if (timer) { clearInterval(timer); timer = null; } };
 
