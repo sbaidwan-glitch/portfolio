@@ -6,7 +6,7 @@
 <title>Samara Baidwan — Engineering at Harvey Mudd</title>
 <meta name="description" content="Samara Baidwan — engineering student at Harvey Mudd College ('28). Electronics, materials, instrumentation, and hands-on hardware design.">
 <meta name="author" content="Samara Baidwan">
-<meta name="theme-color" content="#ffffff">
+<meta name="theme-color" content="#fffdfb">
 <link rel="canonical" href="https://sbaidwan.clodhost.com/">
 <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
 
@@ -35,7 +35,7 @@
     <nav class="nav-links" aria-label="Primary">
       <a href="#about">About</a>
       <a href="#projects">Projects</a>
-      <a href="#experience">Experience</a>
+      <a href="#makerspace">Makerspace</a>
       <a href="#interests">Interests</a>
       <a href="#contact">Contact</a>
     </nav>
@@ -50,7 +50,7 @@
   <div class="mobile-menu" id="mobile-menu" hidden>
     <a href="#about">About</a>
     <a href="#projects">Projects</a>
-    <a href="#experience">Experience</a>
+    <a href="#makerspace">Makerspace</a>
     <a href="#interests">Interests</a>
     <a href="#contact">Contact</a>
   </div>
@@ -123,89 +123,158 @@
       <header class="sec-head reveal">
         <p class="sec-label">Projects</p>
         <h2 class="sec-title">Research &amp; builds</h2>
-        <p class="sec-sub">Selected work in materials, instrumentation, and robotics.</p>
+        <p class="sec-sub">Hardware, instrumentation, and robotics — plus the research behind them.</p>
       </header>
+
+      <div class="projects">
+
+        <!-- MuddSub -->
+        <article class="project card reveal">
+          <div class="p-top">
+            <span class="date">Aug 2025 – present</span>
+            <span class="chip chip-team">Club · Team · Ongoing</span>
+          </div>
+          <h3>MuddSub — Crush Autonomous Underwater Vehicle</h3>
+          <p class="one-liner">Mechanical co-president building MuddSub’s next competition submarine.</p>
+          <p class="desc">
+            Crush is MuddSub’s new autonomous underwater vehicle, built by a 100% student-run team that
+            competes each year at RoboSub against 50-plus international teams. I lead the mechanical
+            team — running design reviews, machining enclosures, prototyping actuators, and integrating
+            electronics and waterproofing — and I work with club leadership to keep dependencies clear
+            across the mechanical, electrical, and software subteams.
+          </p>
+          <p class="contribution">
+            <span>My contribution</span>
+            Team project. As mechanical co-president (elected 2026) I lead mechanical development of
+            Crush and mentor members in SolidWorks drawing preparation, enclosure machining, actuator
+            prototyping, electronics integration, and waterproofing.
+          </p>
+          <div class="p-media">
+            <figure class="fit"><img src="/assets/img/sub-crush.webp" alt="CAD model of Crush, MuddSub’s autonomous underwater vehicle" loading="lazy" width="1500" height="1500"></figure>
+            <figure class="fit"><img src="/assets/img/sub-pcb.webp" alt="MuddSub printed circuit board layout" loading="lazy" width="1500" height="1500"></figure>
+            <figure><img src="/assets/img/sub-marker.webp" alt="3D-printed marker dropper mechanism" loading="lazy" width="1500" height="1500"></figure>
+            <figure><img src="/assets/img/sub-alfie.webp" alt="MuddSub robot hardware with thrusters mounted" loading="lazy" width="1500" height="1500"></figure>
+          </div>
+          <ul class="tags">
+            <li>SolidWorks</li><li>Machining</li><li>Enclosure design</li><li>Actuator prototyping</li>
+            <li>Waterproofing</li><li>Electronics integration</li>
+          </ul>
+        </article>
+
+        <!-- Basilisk -->
+        <article class="project card reveal">
+          <div class="p-top">
+            <span class="date">Spring 2026 · Experimental Engineering</span>
+            <span class="chip chip-team">Coursework · Team</span>
+          </div>
+          <h3>Basilisk — Autonomous Surface Vehicle</h3>
+          <p class="one-liner">A sensor-laden floating robot that measures wind and sun offshore to help site marine renewable energy.</p>
+          <p class="desc">
+            Offshore wind and floating solar farms need good local data on wind speed, wind direction,
+            and solar irradiance. For E80 we built Basilisk, an autonomous surface vehicle that logs all
+            three while underway. I designed the multi-sensor instrumentation — a Hall-effect anemometer,
+            a magnetic weathervane, and a photodiode transimpedance amplifier for irradiance — and
+            integrated them with a Teensy 4.0 and microSD logging, calibrating each sensor against
+            reference instruments before field deployment.
+          </p>
+          <p class="result">
+            <span>What we found</span>
+            Deployed at Dana Point, the vehicle showed no significant change in wind or irradiance with
+            distance from shore. Solar power density was roughly 76× wind power density in the cove. The
+            anemometer lost pulse accuracy at higher wind speeds, and the bot drifted off heading without
+            closed-loop control — both clear next steps.
+          </p>
+          <p class="team">Team: <span>Samara Baidwan, Ava Barasch, Andy Maldonado, Felix Peng</span></p>
+          <div class="p-media">
+            <figure><img src="/assets/img/basilisk-ocean.webp" alt="Basilisk autonomous surface vehicle deployed in open water off Dana Point" loading="lazy" width="1500" height="1500"></figure>
+            <figure><img src="/assets/img/basilisk-pool.webp" alt="Basilisk autonomous surface vehicle during pool testing" loading="lazy" width="1500" height="1500"></figure>
+            <figure class="fit"><img src="/assets/img/basilisk-energy.webp" alt="Bar chart comparing wind and solar power density measured at Dana Cove" loading="lazy" width="1500" height="1500"></figure>
+            <figure class="fit"><img src="/assets/img/basilisk-windrose.webp" alt="Wind rose showing prevailing wind direction during the deployment" loading="lazy" width="1500" height="1500"></figure>
+          </div>
+          <ul class="tags">
+            <li>Teensy 4.0</li><li>Hall-effect sensors</li><li>Photodiodes</li><li>Op-amp circuits</li>
+            <li>Sensor calibration</li><li>microSD logging</li><li>3D printing</li>
+          </ul>
+        </article>
+
+        <!-- Lab Helper -->
+        <article class="project card reveal">
+          <div class="p-top">
+            <span class="date">Fall 2025 · Intro to Engineering Design</span>
+            <span class="chip chip-team">Coursework · Team</span>
+          </div>
+          <h3>Lab Helper — Microcentrifuge Tube Capper</h3>
+          <p class="one-liner">A bench tool that caps a rack of tubes 4.7× faster than by hand.</p>
+          <p class="desc">
+            Our client, a biology lab technician, spent a chunk of every week snapping lids onto
+            microcentrifuge tubes by hand — slow, and hard on the wrists. For E4 we designed a hinged
+            press that closes a full row at once, paired with a 3D-printed rack that holds the tubes
+            steady and survives ethanol sterilization. Everything had to cost under $30 and not damage
+            the tubes or the user’s gloves.
+          </p>
+          <p class="result">
+            <span>Result</span>
+            80 tubes capped in 51 seconds versus about four minutes by hand — 4.7× faster — for under $30.
+          </p>
+          <p class="team">Team: <span>Samara Baidwan, Sophie, Luna, Soraya, Lucas</span></p>
+
+          <figure class="p-video">
+            <video controls preload="metadata" playsinline poster="/assets/video/lab-helper-poster.jpg">
+              <source src="/assets/video/lab-helper.mp4" type="video/mp4">
+              Your browser doesn’t support embedded video.
+            </video>
+            <figcaption>Lab Helper capping a full rack of tubes.</figcaption>
+          </figure>
+
+          <div class="p-media">
+            <figure class="fit"><img src="/assets/img/lab-cad.webp" alt="CAD model of the Lab Helper tube press" loading="lazy" width="1500" height="1500"></figure>
+            <figure><img src="/assets/img/lab-inuse.webp" alt="Lab Helper being pressed down over a row of microcentrifuge tubes" loading="lazy" width="1500" height="1500"></figure>
+            <figure><img src="/assets/img/lab-printed.webp" alt="3D-printed tube racks in several colours" loading="lazy" width="1500" height="1500"></figure>
+            <figure class="fit"><img src="/assets/img/lab-results.webp" alt="Chart of time taken to close 80 tubes by hand versus with the device" loading="lazy" width="1500" height="1500"></figure>
+          </div>
+          <ul class="tags">
+            <li>SolidWorks</li><li>3D printing</li><li>Laser cutting</li><li>Rapid prototyping</li><li>Design review</li>
+          </ul>
+        </article>
+
+      </div>
 
       <div class="cards">
 
-        <article class="card project reveal">
+        <article class="project card reveal">
           <div class="p-top">
-            <span class="date">Summer 2026</span>
-            <span class="chip">Individual research</span>
+            <span class="date">Summer 2026 · UNSW Sydney</span>
+            <span class="chip">Research</span>
           </div>
           <h3>Carbon-Bronze Alloy Development &amp; Characterization</h3>
-          <p class="one-liner">Investigating how composition and heat treatment affect experimental alloys for bushings and bearings.</p>
+          <p class="one-liner">Developing and characterizing 21 experimental copper-based alloys for bushings and bearings.</p>
           <p class="desc">
-            During summer research at the University of New South Wales, I developed and characterized
-            21 experimental copper-based carbon-bronze alloys. My work included calculating compositions,
-            preparing alloy charges, arc melting, heat treatment, metallographic preparation, optical
-            microscopy, and hardness testing. I also improved an existing MATLAB image-analysis pipeline
-            to quantify carbon area fraction and particle-size distributions across compositions and
-            heat treatments.
+            Summer research at the University of New South Wales. I calculated target compositions,
+            prepared alloy charges, and carried out arc melting, heat treatment, metallographic
+            preparation, optical microscopy, and hardness testing across 21 experimental carbon-bronze
+            alloys. I also improved an existing MATLAB image-analysis pipeline to quantify carbon area
+            fraction and particle-size distributions, and fabricated Zr-based alloys for space
+            nuclear-reactor cladding research.
           </p>
           <ul class="tags">
-            <li>MATLAB</li><li>Alloy preparation</li><li>Arc melting</li><li>Heat treatment</li>
-            <li>Metallography</li><li>Optical microscopy</li><li>Hardness testing</li>
+            <li>MATLAB</li><li>Arc melting</li><li>Heat treatment</li><li>Metallography</li>
+            <li>Optical microscopy</li><li>Hardness testing</li><li>DSC analysis</li>
           </ul>
         </article>
 
-        <article class="card project reveal">
-          <div class="p-top">
-            <span class="date">Spring 2026 · Experimental Engineering</span>
-            <span class="chip">Coursework</span>
-          </div>
-          <h3>Autonomous Surface Vehicle — Environmental Sensing</h3>
-          <p class="one-liner">A calibrated sensor system for collecting environmental measurements during coastal field testing.</p>
-          <p class="desc">
-            I designed a multi-sensor instrumentation system that included a Hall-effect anemometer,
-            magnetic wind-direction sensing, and a photodiode amplifier circuit for measuring solar
-            irradiance. I integrated analog and digital sensors with a Teensy 4.0 and microSD logging,
-            calibrated measurements against reference instruments, and deployed the system on an
-            autonomous surface vehicle. The project was selected for presentation to Harvey Mudd’s
-            Engineering Visitors Committee.
-          </p>
-          <ul class="tags">
-            <li>Teensy 4.0</li><li>Hall-effect sensors</li><li>Photodiodes</li><li>Op-amp circuits</li>
-            <li>microSD logging</li><li>Sensor calibration</li><li>3D printing</li>
-          </ul>
-        </article>
-
-        <article class="card project reveal">
-          <div class="p-top">
-            <span class="date">Aug 2025 – present</span>
-            <span class="chip chip-team">Team project · Ongoing</span>
-          </div>
-          <h3>MuddSub — Crush Autonomous Underwater Vehicle</h3>
-          <p class="one-liner">Mechanical development and interdisciplinary teamwork for a student-built underwater robot.</p>
-          <p class="desc">
-            As MuddSub’s mechanical co-president, I lead mechanical development of Crush and mentor
-            members in SolidWorks drawing preparation, enclosure machining, actuator prototyping,
-            electronics integration, and waterproofing. I also work with club leadership to coordinate
-            responsibilities and dependencies across mechanical, electrical, and software teams.
-          </p>
-          <p class="contribution">
-            <span>My contribution</span> Team project — I lead mechanical development and mentor members
-            as mechanical co-president (elected 2026). Ongoing team effort.
-          </p>
-          <ul class="tags">
-            <li>SolidWorks</li><li>Mechanical drawings</li><li>Machining</li><li>Actuator prototyping</li>
-            <li>Enclosure design</li><li>Electronics integration</li><li>Waterproofing</li>
-          </ul>
-        </article>
-
-        <article class="card project reveal">
+        <article class="project card reveal">
           <div class="p-top">
             <span class="date">Jan – Dec 2025</span>
-            <span class="chip">Undergraduate research</span>
+            <span class="chip">Research</span>
           </div>
           <h3>Fluorescence Characterization &amp; Instrument Troubleshooting</h3>
-          <p class="one-liner">Improving confidence in laboratory measurements through calibration troubleshooting and documentation.</p>
+          <p class="one-liner">Making lab measurements trustworthy through calibration troubleshooting and documentation.</p>
           <p class="desc">
-            As an undergraduate research assistant in Harvey Mudd’s Molecular Engineering Lab, I conducted
-            fluorescence experiments and investigated circular-dichroism instrument calibration errors.
-            I used hardware inspection and coordination with the manufacturer to diagnose problems, and
-            authored a characterization standard operating procedure. The experience strengthened my
-            interest in reliable instrumentation and reproducible experiments.
+            As an undergraduate research assistant in Harvey Mudd’s Molecular Engineering Lab, I ran
+            fluorescence experiments and chased down circular-dichroism instrument calibration errors —
+            inspecting hardware and coordinating with the manufacturer to find the cause. I also authored
+            a characterization standard operating procedure. The work sharpened my interest in reliable
+            instrumentation and reproducible experiments.
           </p>
           <ul class="tags">
             <li>Fluorescence characterization</li><li>Circular-dichroism instrumentation</li>
@@ -217,29 +286,38 @@
     </div>
   </section>
 
-  <!-- ============ EXPERIENCE ============ -->
-  <section class="section" id="experience">
+  <!-- ============ MAKERSPACE ============ -->
+  <section class="section" id="makerspace">
     <div class="wrap">
       <header class="sec-head reveal">
-        <p class="sec-label">Experience</p>
-        <h2 class="sec-title">Beyond the lab</h2>
+        <p class="sec-label">Makerspace</p>
+        <h2 class="sec-title">Where I build</h2>
       </header>
 
-      <article class="card project reveal">
-        <div class="p-top">
+      <article class="space-card card reveal">
+        <div class="space-head">
           <span class="date">Aug 2026 – present</span>
           <span class="chip">Leadership</span>
+          <span class="date">Promoted from Steward, 2025–2026</span>
         </div>
         <h3>Harvey Mudd Makerspace — Head Steward, Coordination</h3>
         <p class="desc">
-          I help coordinate technical training and onboarding for a team of more than 50 student
-          stewards in a makerspace serving over 1,200 users. My work includes improving training
-          procedures and standardizing equipment documentation. My fabrication experience includes
-          manual machining, laser and waterjet cutting, and 3D printing.
+          I help run Harvey Mudd’s student makerspace alongside six other departmental stewards —
+          coordinating technical training and onboarding for a 50-plus person steward team across laser
+          cutting, FDM/SLA/SLS 3D printing, waterjet cutting, manual machining, and electronics handling.
+          Right now I’m reworking our training procedures and standardizing our documentation so that a
+          space this busy stays easy to use and safe to run.
         </p>
+        <div class="stats">
+          <div class="stat"><b>1,200+</b><span>makerspace users served</span></div>
+          <div class="stat"><b>50+</b><span>student stewards trained</span></div>
+          <div class="stat"><b>30+</b><span>manuals standardized</span></div>
+        </div>
         <ul class="tags">
-          <li>Manual machining</li><li>Laser cutting</li><li>Waterjet cutting</li><li>3D printing</li>
+          <li>Laser cutting</li><li>3D printing (FDM / SLA / SLS)</li><li>Waterjet cutting</li>
+          <li>Manual machining</li><li>Electronics handling</li><li>Training &amp; onboarding</li>
         </ul>
+        <p class="space-note">Things I’ve built in the space are coming soon — I’m gathering photos now.</p>
       </article>
     </div>
   </section>
