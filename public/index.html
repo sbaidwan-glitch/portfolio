@@ -18,7 +18,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/assets/css/styles.css?v=20261006">
+<link rel="stylesheet" href="/assets/css/styles.css?v=20261007">
 <script>document.documentElement.classList.add('js');</script>
 </head>
 <body>
@@ -64,7 +64,7 @@
       <div class="hero-grid">
 
         <aside class="hero-id card reveal">
-          <img class="portrait" src="/assets/img/headshot.webp?v=20261006" alt="Samara Baidwan" width="900" height="900">
+          <img class="portrait" src="/assets/img/headshot.webp?v=20261007" alt="Samara Baidwan" width="900" height="900">
           <dl class="facts">
             <div><dt>School</dt><dd>Harvey Mudd College</dd></div>
             <div><dt>Class</dt><dd>2028</dd></div>
@@ -77,8 +77,8 @@
           <h1 class="hero-name">Samara Baidwan</h1>
           <p class="hero-role">Electronics, Materials &amp; Hands-On Design</p>
           <p class="hero-bio">
-            I turn ideas into physical hardware — from PCB designs and sensor circuits to machined
-            components. My experience spans materials research, instrumentation, and underwater robotics.
+            I turn ideas into physical hardware. Check out some of my projects in electronics, materials
+            research, and underwater robotics :)
           </p>
           <div class="hero-cta">
             <a class="btn btn-primary" href="mailto:sbaidwan@g.hmc.edu">Email me</a>
@@ -128,108 +128,30 @@
 
       <div class="projects">
 
-        <!-- MuddSub -->
-        <article class="project card reveal">
-          <figure class="p-focal">
-            <img src="/assets/img/sub-crush.webp?v=20261006" alt="CAD model of Crush, MuddSub’s autonomous underwater vehicle" loading="lazy" width="1500" height="1500">
-          </figure>
+        <!-- Currently working on -->
+        <article class="project project--text card reveal now-card">
           <div class="p-body">
             <div class="p-top">
-              <span class="date">Aug 2025 – present</span>
-              <span class="chip chip-team">Club · Team · Ongoing</span>
+              <span class="date">Now · 2026</span>
+              <span class="chip">In progress</span>
             </div>
-            <h3>MuddSub — Crush Autonomous Underwater Vehicle</h3>
-            <p class="one-liner">Mechanical co-president building MuddSub’s next competition submarine.</p>
+            <h3>Currently working on — PCB design for a modular device</h3>
+            <p class="one-liner">Laying out the electronics for a device built from interchangeable modules.</p>
             <p class="desc">
-              Crush is MuddSub’s new autonomous underwater vehicle, built by a 100% student-run team that
-              competes each year at RoboSub against 50-plus international teams. I lead the mechanical
-              team — running design reviews, machining enclosures, prototyping actuators, and integrating
-              electronics and waterproofing — and I work with club leadership to keep dependencies clear
-              across the mechanical, electrical, and software subteams.
-            </p>
-            <p class="contribution">
-              <span>My contribution</span>
-              Team project. As mechanical co-president (elected 2026) I lead mechanical development of
-              Crush and mentor members in SolidWorks drawing preparation, enclosure machining, actuator
-              prototyping, electronics integration, and waterproofing.
+              I’m designing the board for a modular device — schematic capture, part selection, and
+              layout, with the modules meant to swap in and out. It’s still in design, so I’ll add more
+              here once there’s something worth showing.
             </p>
             <ul class="tags">
-              <li>SolidWorks</li><li>Machining</li><li>Enclosure design</li><li>Actuator prototyping</li>
-              <li>Waterproofing</li><li>Electronics integration</li>
+              <li>PCB design</li><li>Schematic capture</li><li>Part selection</li><li>Board layout</li>
             </ul>
           </div>
-        </article>
-
-        <!-- Basilisk -->
-        <article class="project card reveal">
-          <figure class="p-focal">
-            <img src="/assets/img/basilisk-pool.webp?v=20261006" alt="Basilisk autonomous surface vehicle during pool testing" loading="lazy" width="1500" height="1500">
-          </figure>
-          <div class="p-body">
-            <div class="p-top">
-              <span class="date">Spring 2026 · Experimental Engineering</span>
-              <span class="chip chip-team">Coursework · Team</span>
-            </div>
-            <h3>Basilisk — Autonomous Surface Vehicle</h3>
-            <p class="one-liner">A sensor-laden floating robot that measures wind and sun offshore to help site marine renewable energy.</p>
-            <p class="desc">
-              Offshore wind and floating solar farms need good local data on wind speed, wind direction,
-              and solar irradiance. For E80 we built Basilisk, an autonomous surface vehicle that logs all
-              three while underway. I designed the multi-sensor instrumentation — a Hall-effect anemometer,
-              a magnetic weathervane, and a photodiode transimpedance amplifier for irradiance — and
-              integrated them with a Teensy 4.0 and microSD logging, calibrating each sensor against
-              reference instruments before field deployment.
-            </p>
-            <p class="result">
-              <span>What we found</span>
-              Deployed at Dana Point, the vehicle showed no significant change in wind or irradiance with
-              distance from shore. Solar power density was roughly 76× wind power density in the cove. The
-              anemometer lost pulse accuracy at higher wind speeds, and the bot drifted off heading without
-              closed-loop control — both clear next steps.
-            </p>
-            <p class="team">Team: <span>Samara Baidwan, Ava Barasch, Andy Maldonado, Felix Peng</span></p>
-            <ul class="tags">
-              <li>Teensy 4.0</li><li>Hall-effect sensors</li><li>Photodiodes</li><li>Op-amp circuits</li>
-              <li>Sensor calibration</li><li>microSD logging</li><li>3D printing</li>
-            </ul>
-          </div>
-        </article>
-
-        <!-- Lab Helper -->
-        <article class="project project--stack card reveal">
-          <div class="p-body">
-            <div class="p-top">
-              <span class="date">Fall 2025 · Intro to Engineering Design</span>
-              <span class="chip chip-team">Coursework · Team</span>
-            </div>
-            <h3>Lab Helper — Microcentrifuge Tube Capper</h3>
-            <p class="one-liner">A bench tool that caps a rack of tubes 4.7× faster than by hand.</p>
-            <p class="desc">
-              Our client, a biology lab technician, spent a chunk of every week snapping lids onto
-              microcentrifuge tubes by hand — slow, and hard on the wrists. For E4 we designed a hinged
-              press that closes a full row at once, paired with a 3D-printed rack that holds the tubes
-              steady and survives ethanol sterilization. Everything had to cost under $30 and not damage
-              the tubes or the user’s gloves.
-            </p>
-            <p class="result">
-              <span>Result</span>
-              80 tubes capped in 51 seconds versus about four minutes by hand — 4.7× faster — for under $30.
-            </p>
-            <p class="team">Team: <span>Samara Baidwan, Sophie, Luna, Soraya, Lucas</span></p>
-          </div>
-          <figure class="p-focal p-focal--video">
-            <video controls preload="metadata" playsinline poster="/assets/video/lab-helper-poster.jpg?v=20261006">
-              <source src="/assets/video/lab-helper.mp4?v=20261006" type="video/mp4">
-              Your browser doesn’t support embedded video.
-            </video>
-            <figcaption>Lab Helper capping a full rack of tubes.</figcaption>
-          </figure>
         </article>
 
         <!-- Carbon-Bronze (UNSW) -->
         <article class="project card reveal">
           <figure class="p-focal">
-            <img src="/assets/img/unsw-arcmelt.webp?v=20261006" alt="Arc melter with molten carbon-bronze alloy glowing inside the chamber" loading="lazy" width="1200" height="900">
+            <img src="/assets/img/unsw-arcmelt.webp?v=20261007" alt="Arc melter with molten carbon-bronze alloy glowing inside the chamber" loading="lazy" width="1200" height="900">
           </figure>
           <div class="p-body">
             <div class="p-top">
@@ -271,17 +193,131 @@
           <div class="p-extra">
             <div class="slideshow" data-slideshow>
               <div class="slides">
-                <img class="slide is-active" src="/assets/img/unsw-lab1.webp?v=20261006" alt="Running the arc melter in the UNSW lab" loading="lazy" width="900" height="1200">
-                <img class="slide" src="/assets/img/unsw-lab2.webp?v=20261006" alt="Working in the workshop during the UNSW summer placement" loading="lazy" width="1200" height="900">
-                <img class="slide" src="/assets/img/unsw-micro.webp?v=20261006" alt="SEM image with EDS elemental maps of a carbon-bronze alloy" loading="lazy" width="1400" height="747">
+                <img class="slide is-active" src="/assets/img/unsw-lab1.webp?v=20261007" alt="Running the arc melter in the UNSW lab" loading="lazy" width="900" height="1200">
+                <img class="slide" src="/assets/img/unsw-lab2.webp?v=20261007" alt="Working in the workshop during the UNSW summer placement" loading="lazy" width="1200" height="900">
               </div>
               <div class="slide-dots" role="tablist" aria-label="Photos from the UNSW summer research">
                 <button class="dot is-active" type="button" role="tab" aria-selected="true" aria-label="Photo 1"></button>
                 <button class="dot" type="button" role="tab" aria-selected="false" aria-label="Photo 2"></button>
-                <button class="dot" type="button" role="tab" aria-selected="false" aria-label="Photo 3"></button>
               </div>
             </div>
-            <p class="slide-cap">Around the lab at UNSW Sydney — summer 2026.</p>
+            <div class="slide-meta">
+              <p class="slide-cap">In the lab and workshop at UNSW Sydney — summer 2026.</p>
+              <p class="slide-cap slide-cap--conf">Attending TMS Conference 2027.</p>
+              <a class="link-out" href="/assets/docs/hmc-poster-2026.pdf" target="_blank" rel="noopener">
+                <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 3h7v7"/><path d="M21 3 10 14"/><path d="M19 14v5a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2h5"/></svg>
+                Summer research poster <span>· PDF, 3.6 MB</span>
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Basilisk -->
+        <article class="project card reveal">
+          <figure class="p-focal">
+            <img src="/assets/img/basilisk-buoy.webp?v=20261007" alt="Basilisk floating on the water, with its cup anemometer and wind vane mounted above the frame" loading="lazy" width="1500" height="1125">
+          </figure>
+          <div class="p-body">
+            <div class="p-top">
+              <span class="date">Spring 2026 · Experimental Engineering</span>
+              <span class="chip chip-team">Coursework · Team</span>
+            </div>
+            <h3>Basilisk — Autonomous Surface Vehicle</h3>
+            <p class="one-liner">A sensor-laden floating robot that measures wind and sun offshore to help site marine renewable energy.</p>
+            <p class="desc">
+              Offshore wind and floating solar farms need good local data on wind speed, wind direction,
+              and solar irradiance. For E80 we built Basilisk, an autonomous surface vehicle that logs all
+              three while underway. I designed the multi-sensor instrumentation — a Hall-effect anemometer,
+              a magnetic weathervane, and a photodiode transimpedance amplifier for irradiance — and
+              integrated them with a Teensy 4.0 and microSD logging, calibrating each sensor against
+              reference instruments before field deployment.
+            </p>
+            <p class="result">
+              <span>What we found</span>
+              Deployed at Dana Point, the vehicle showed no significant change in wind or irradiance with
+              distance from shore. Solar power density was roughly 76× wind power density in the cove. The
+              anemometer lost pulse accuracy at higher wind speeds, and the bot drifted off heading without
+              closed-loop control — both clear next steps.
+            </p>
+            <p class="team">Team: <span>Samara Baidwan, Ava Barasch, Andy Maldonado, Felix Peng</span></p>
+            <ul class="tags">
+              <li>Teensy 4.0</li><li>Hall-effect sensors</li><li>Photodiodes</li><li>Op-amp circuits</li>
+              <li>Sensor calibration</li><li>microSD logging</li><li>3D printing</li>
+            </ul>
+          </div>
+          <div class="p-extra">
+            <p class="extra-note">The two sensor circuits I designed for Basilisk.</p>
+            <figure class="schematic">
+              <img src="/assets/img/e80-anemometer.webp?v=20261007" alt="Schematic of the anemometer circuit: an A3144 Hall-effect sensor on 5 V with a 10 nF decoupling capacitor, its open-collector output pulled up through 10 kΩ and filtered by 100 pF into Teensy 4.0 pin A0." loading="lazy" width="1400" height="896">
+              <figcaption>Anemometer — A3144 Hall-effect sensor read on Teensy pin A0.</figcaption>
+            </figure>
+            <figure class="schematic">
+              <img src="/assets/img/e80-weathervane.webp?v=20261007" alt="Schematic of the weathervane circuit: an analog magnetic sensor IC on 5 V with 100 nF decoupling, its output divided by R1 = 18 kΩ and R2 = 30 kΩ into Teensy 4.0 pin A1 at 0.1–3.0 V." loading="lazy" width="1400" height="864">
+              <figcaption>Weathervane — analog magnetic sensor read on Teensy pin A1.</figcaption>
+            </figure>
+          </div>
+        </article>
+
+        <!-- Lab Helper -->
+        <article class="project project--stack card reveal">
+          <div class="p-body">
+            <div class="p-top">
+              <span class="date">Fall 2025 · Intro to Engineering Design</span>
+              <span class="chip chip-team">Coursework · Team</span>
+            </div>
+            <h3>Lab Helper — Microcentrifuge Tube Capper</h3>
+            <p class="one-liner">A bench tool that caps a rack of tubes 4.7× faster than by hand.</p>
+            <p class="desc">
+              Our client, a biology lab technician, spent a chunk of every week snapping lids onto
+              microcentrifuge tubes by hand — slow, and hard on the wrists. For E4 we designed a hinged
+              press that closes a full row at once, paired with a 3D-printed rack that holds the tubes
+              steady and survives ethanol sterilization. Everything had to cost under $30 and not damage
+              the tubes or the user’s gloves.
+            </p>
+            <p class="result">
+              <span>Result</span>
+              80 tubes capped in 51 seconds versus about four minutes by hand — 4.7× faster — for under $30.
+            </p>
+            <p class="team">Team: <span>Samara Baidwan, Sophie, Luna, Soraya, Lucas</span></p>
+          </div>
+          <figure class="p-focal p-focal--video">
+            <video controls preload="metadata" playsinline poster="/assets/video/lab-helper-poster.jpg?v=20261007">
+              <source src="/assets/video/lab-helper.mp4?v=20261007" type="video/mp4">
+              Your browser doesn’t support embedded video.
+            </video>
+            <figcaption>Lab Helper capping a full rack of tubes.</figcaption>
+          </figure>
+        </article>
+
+        <!-- MuddSub -->
+        <article class="project card reveal">
+          <figure class="p-focal">
+            <img src="/assets/img/sub-crush.webp?v=20261007" alt="CAD model of Crush, MuddSub’s autonomous underwater vehicle" loading="lazy" width="1500" height="1500">
+          </figure>
+          <div class="p-body">
+            <div class="p-top">
+              <span class="date">Aug 2025 – present</span>
+              <span class="chip chip-team">Club · Team · Ongoing</span>
+            </div>
+            <h3>MuddSub — Crush Autonomous Underwater Vehicle</h3>
+            <p class="one-liner">Mechanical co-president building MuddSub’s next competition submarine.</p>
+            <p class="desc">
+              Crush is MuddSub’s new autonomous underwater vehicle, built by a 100% student-run team that
+              competes each year at RoboSub against 50-plus international teams. I lead the mechanical
+              team — running design reviews, machining enclosures, prototyping actuators, and integrating
+              electronics and waterproofing — and I work with club leadership to keep dependencies clear
+              across the mechanical, electrical, and software subteams.
+            </p>
+            <p class="contribution">
+              <span>My contribution</span>
+              Team project. As mechanical co-president (elected 2026) I lead mechanical development of
+              Crush and mentor members in SolidWorks drawing preparation, enclosure machining, actuator
+              prototyping, electronics integration, and waterproofing.
+            </p>
+            <ul class="tags">
+              <li>SolidWorks</li><li>Machining</li><li>Enclosure design</li><li>Actuator prototyping</li>
+              <li>Waterproofing</li><li>Electronics integration</li>
+            </ul>
           </div>
         </article>
 
@@ -304,26 +340,6 @@
             <ul class="tags">
               <li>Fluorescence characterization</li><li>Circular-dichroism instrumentation</li>
               <li>Calibration troubleshooting</li><li>Experimental documentation</li>
-            </ul>
-          </div>
-        </article>
-
-        <!-- Currently working on -->
-        <article class="project project--text card reveal now-card">
-          <div class="p-body">
-            <div class="p-top">
-              <span class="date">Now · 2026</span>
-              <span class="chip">In progress</span>
-            </div>
-            <h3>Currently working on — PCB design for a modular device</h3>
-            <p class="one-liner">Laying out the electronics for a device built from interchangeable modules.</p>
-            <p class="desc">
-              I’m designing the board for a modular device — schematic capture, part selection, and
-              layout, with the modules meant to swap in and out. It’s still in design, so I’ll add more
-              here once there’s something worth showing.
-            </p>
-            <ul class="tags">
-              <li>PCB design</li><li>Schematic capture</li><li>Part selection</li><li>Board layout</li>
             </ul>
           </div>
         </article>
@@ -434,6 +450,6 @@
   </div>
 </footer>
 
-<script src="/assets/js/main.js?v=20261006" defer></script>
+<script src="/assets/js/main.js?v=20261007" defer></script>
 </body>
 </html>
