@@ -67,18 +67,24 @@
     }));
   }
 
-  /* slideshow: without JS the first slide stays put and the dots do nothing */
+  /* slideshow: without JS the first slide stays put and the dots do nothing.
+     data-static marks a reel that should not rotate on a timer, because the
+     thing it holds is meant to be read rather than glanced at */
   document.querySelectorAll('[data-slideshow]').forEach(box => {
     const slides = [...box.querySelectorAll('.slide')];
     const dots = [...box.querySelectorAll('.dot')];
     if (slides.length < 2 || dots.length !== slides.length) return;
 
+    const auto = !box.hasAttribute('data-static');
     let i = 0, timer = null;
 
     const show = n => {
       i = (n + slides.length) % slides.length;
       slides.forEach((s, k) => {
         s.classList.toggle('is-active', k === i);
+        /* a faded-out slide is still hit-testable and still in the tab order,
+           so take it out of both rather than leave an invisible target */
+        s.toggleAttribute('inert', k !== i);
         const v = s.querySelector('video');
         if (!v) return;
         if (k === i && !reduceMotion) v.play().catch(() => {});
@@ -95,7 +101,7 @@
     const advance = () => { if (!slides[i].querySelector('video')) show(i + 1); };
 
     const start = () => {
-      if (reduceMotion) return;
+      if (reduceMotion || !auto) return;
       stop();
       timer = setInterval(advance, 4200);
     };
@@ -107,6 +113,34 @@
     box.addEventListener('focusin', stop);
     box.addEventListener('focusout', start);
     document.addEventListener('visibilitychange', () => document.hidden ? stop() : start());
+
+    /* swipe. a drag shorter than the threshold, or one that is mostly vertical,
+       is left to the page; a real horizontal drag moves the reel and swallows
+       the click it would otherwise fire on a slide link */
+    const SWIPE = 40;
+    let x0 = 0, y0 = 0, dragging = false, ate = false;
+    box.addEventListener('touchstart', e => {
+      if (e.touches.length !== 1) return;
+      x0 = e.touches[0].clientX;
+      y0 = e.touches[0].clientY;
+      dragging = true;
+    }, { passive: true });
+    box.addEventListener('touchend', e => {
+      if (!dragging) return;
+      dragging = false;
+      const t = e.changedTouches[0];
+      const dx = t.clientX - x0, dy = t.clientY - y0;
+      if (Math.abs(dx) < SWIPE || Math.abs(dx) < Math.abs(dy)) return;
+      ate = true;
+      setTimeout(() => { ate = false; }, 350);
+      show(i + (dx < 0 ? 1 : -1));
+      start();
+    }, { passive: true });
+    box.addEventListener('click', e => {
+      if (!ate) return;
+      e.preventDefault();
+      e.stopPropagation();
+    }, true);
 
     show(0);
     start();
