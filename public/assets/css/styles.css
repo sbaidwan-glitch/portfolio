@@ -443,8 +443,11 @@ section[id]{scroll-margin-top:6.5rem}
 .p-hero2 figure{display:flex;flex-direction:column;gap:.55rem;margin:0}
 .p-hero2 video,.p-hero2 img{
   width:100%;border-radius:var(--radius-sm);border:1px solid var(--border);
-  background:#12100e;display:block;
+  background:var(--card-2);display:block;
 }
+/* a clip letterboxes against dark; a photograph keeps the card tone, so no
+   dark rim shows through the rounded corners */
+.p-hero2 video{background:#12100e}
 .p-hero2 figcaption{font-size:.82rem;color:var(--ink-3);text-align:center}
 
 /* text on one side, its media on the other, alternating down the page */
@@ -459,11 +462,12 @@ section[id]{scroll-margin-top:6.5rem}
   width:100%;border-radius:var(--radius-sm);border:1px solid var(--border);
   background:var(--card-2);display:block;
 }
+.mrow-media video{background:#12100e}
 .mrow-media figcaption{font-size:.79rem;color:var(--ink-3)}
 
 /* upright media is capped rather than allowed to run the height of the row.
    the two selectors are scoped so they outrank the width:100% above. */
-.p-hero2 .upright,.mrow-media .upright{width:auto;max-width:100%;max-height:420px;margin:0 auto;background:#12100e}
+.p-hero2 .upright,.mrow-media .upright{width:auto;max-width:100%;max-height:420px;margin:0 auto}
 
 /* small openings onto a document that opens full size */
 .thumbs{display:grid;grid-template-columns:1fr 1fr;gap:.7rem;margin-top:.9rem;align-items:start}

@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Basilisk: Autonomous Wind &amp; Solar Survey Boat · Samara Baidwan</title>
+<title>Basilisk: Autonomous Surface Vehicle for Wind &amp; Solar Surveys · Samara Baidwan</title>
 <meta name="description" content="An autonomous surface vehicle that logged wind speed, wind direction, and sunlight offshore, and the two wind sensors Samara designed, built, and calibrated for it.">
 <meta name="author" content="Samara Baidwan">
 <meta name="theme-color" content="#fffdfb">
@@ -11,7 +11,7 @@
 <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
 
 <meta property="og:type" content="article">
-<meta property="og:title" content="Basilisk: Autonomous Wind &amp; Solar Survey Boat">
+<meta property="og:title" content="Basilisk: Autonomous Surface Vehicle for Wind &amp; Solar Surveys">
 <meta property="og:description" content="An autonomous surface vehicle that logged wind speed, wind direction, and sunlight offshore, and the two wind sensors Samara designed, built, and calibrated for it.">
 <meta property="og:url" content="https://sbaidwan.clodhost.com/projects/basilisk/">
 
@@ -80,13 +80,13 @@
 
       <header>
         <p class="proj-label">Experimental Engineering course (E80), Harvey Mudd College · Spring 2026 · Team of 4</p>
-        <h1 class="p-title">Basilisk: Autonomous Wind &amp; Solar Survey Boat</h1>
+        <h1 class="p-title">Basilisk: Autonomous Surface Vehicle for Wind &amp; Solar Surveys</h1>
       </header>
 
       <p class="p-lede">
         Offshore wind and floating solar farms need local data on wind speed, wind direction, and
         sunlight. For Harvey Mudd’s Experimental Engineering course, our team of four built Basilisk, an
-        autonomous surface vehicle that logs all three while underway. We tested it in a pool, then a
+        autonomous surface vehicle (ASV) that logs all three while underway. We tested it in a pool, then a
         lake, then deployed it in the ocean at Dana Point, CA, to see whether energy potential changes
         with distance from shore. I designed, built, and calibrated its two wind sensors.
       </p>
@@ -150,16 +150,6 @@
               </div>
               <figcaption>Calibration run in the wind tunnel.</figcaption>
             </figure>
-            <div class="thumbs">
-              <a class="thumb" href="/assets/img/basilisk-wind-tunnel.webp" target="_blank" rel="noopener">
-                <img src="/assets/img/basilisk-wind-tunnel.webp?v=20261010" alt="The anemometer set up in front of the wind tunnel, with its output on an oscilloscope and a laptop logging beside it" loading="lazy" width="1600" height="1200">
-                <span>First test: Hall-effect pulses on the scope</span>
-              </a>
-              <a class="thumb" href="/assets/img/e80-anemometer.webp" target="_blank" rel="noopener">
-                <img src="/assets/img/e80-anemometer.webp?v=20261010" alt="Anemometer circuit diagram showing an A3144 Hall-effect sensor connected to Teensy 4.0 pin A0." loading="lazy" width="1007" height="805">
-                <span>Anemometer circuit</span>
-              </a>
-            </div>
           </div>
         </div>
 
@@ -180,13 +170,24 @@
               <img class="upright" src="/assets/img/basilisk-full-build.jpg?v=20261016" alt="The wind vane and cup anemometer mounted above the sealed electronics box on the assembled ASV" loading="lazy" width="1200" height="1600">
               <figcaption>Full build on the bench: wind vane (red) and anemometer mounted above the sealed electronics box.</figcaption>
             </figure>
-            <div class="thumbs">
-              <a class="thumb" href="/assets/img/e80-weathervane.webp" target="_blank" rel="noopener">
-                <img src="/assets/img/e80-weathervane.webp?v=20261010" alt="Wind-direction sensor circuit diagram showing an analog sensor output connected through a resistor divider to Teensy 4.0 pin A1." loading="lazy" width="1012" height="805">
-                <span>Wind vane circuit</span>
-              </a>
-            </div>
           </div>
+        </div>
+
+        <!-- the two sensor circuits together, at a size that can be read
+             straight off rather than one at a time -->
+        <div class="p-figs">
+          <figure class="p-fig p-fig--natural">
+            <a class="zoom" href="/assets/img/e80-anemometer.webp" target="_blank" rel="noopener">
+              <img src="/assets/img/e80-anemometer.webp?v=20261010" alt="Anemometer circuit diagram showing an A3144 Hall-effect sensor connected to Teensy 4.0 pin A0." loading="lazy" width="1007" height="805">
+            </a>
+            <figcaption>Anemometer circuit (A3144 Hall-effect switch)</figcaption>
+          </figure>
+          <figure class="p-fig p-fig--natural">
+            <a class="zoom" href="/assets/img/e80-weathervane.webp" target="_blank" rel="noopener">
+              <img src="/assets/img/e80-weathervane.webp?v=20261010" alt="Wind-direction sensor circuit diagram showing an analog sensor output connected through a resistor divider to Teensy 4.0 pin A1." loading="lazy" width="1012" height="805">
+            </a>
+            <figcaption>Wind vane circuit (MLX90316 rotary sensor)</figcaption>
+          </figure>
         </div>
 
         <div class="mrow">
@@ -226,7 +227,7 @@
           The anemometer stopped keeping up above about 5 m/s in the wind tunnel, because the magnet
           strength and sensor sensitivity limited the pulse count. That made the calibration valid only
           at low speeds. A stronger magnet or a more sensitive Hall sensor would extend the range, and
-          closed-loop steering would stop the ASV drifting off its heading.
+          closed-loop steering would keep the ASV on its heading.
         </p>
       </section>
 
