@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Basilisk: Autonomous Wind &amp; Solar Survey Boat · Samara Baidwan</title>
-<meta name="description" content="An autonomous surface vehicle that logged wind speed, wind direction, and sunlight offshore, and the two wind sensors Samara designed and calibrated for it.">
+<meta name="description" content="An autonomous surface vehicle that logged wind speed, wind direction, and sunlight offshore, and the two wind sensors Samara designed, built, and calibrated for it.">
 <meta name="author" content="Samara Baidwan">
 <meta name="theme-color" content="#fffdfb">
 <link rel="canonical" href="https://sbaidwan.clodhost.com/projects/basilisk/">
@@ -12,7 +12,7 @@
 
 <meta property="og:type" content="article">
 <meta property="og:title" content="Basilisk: Autonomous Wind &amp; Solar Survey Boat">
-<meta property="og:description" content="An autonomous surface vehicle that logged wind speed, wind direction, and sunlight offshore, and the two wind sensors Samara designed and calibrated for it.">
+<meta property="og:description" content="An autonomous surface vehicle that logged wind speed, wind direction, and sunlight offshore, and the two wind sensors Samara designed, built, and calibrated for it.">
 <meta property="og:url" content="https://sbaidwan.clodhost.com/projects/basilisk/">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -71,7 +71,7 @@
   </div>
 </header>
 
-<main id="main">
+<main id="main" tabindex="-1">
 
   <article class="p-page">
     <div class="wrap p-wrap">
@@ -83,71 +83,140 @@
         <h1 class="p-title">Basilisk: Autonomous Wind &amp; Solar Survey Boat</h1>
       </header>
 
-      <figure class="p-fig p-fig--hero">
-        <img src="/assets/img/basilisk-wind-tunnel.webp?v=20261016" alt="The cup anemometer set up in front of the wind tunnel, with its output on an oscilloscope and a laptop logging beside it" loading="lazy" width="1600" height="1200">
-        <figcaption>Calibrating the anemometer in Harvey Mudd’s wind tunnel.</figcaption>
-      </figure>
-
       <p class="p-lede">
         Offshore wind and floating solar farms need local data on wind speed, wind direction, and
-        sunlight. Our team built Basilisk, an autonomous surface vehicle that logs all three while
-        underway. We tested whether energy potential changes with distance from shore at Dana Point, CA.
+        sunlight. For Harvey Mudd’s Experimental Engineering course, our team of four built Basilisk, an
+        autonomous surface vehicle that logs all three while underway. We tested it in a pool, then a
+        lake, then deployed it in the ocean at Dana Point, CA, to see whether energy potential changes
+        with distance from shore. I designed, built, and calibrated its two wind sensors.
       </p>
+
+      <p class="p-facts">
+        Role: wind sensor design &amp; calibration · Team management · Tools: Teensy 4.0, Arduino,
+        oscilloscope, wind tunnel · Tested: tank → pool → lake → ocean
+      </p>
+
+      <div class="p-hero2">
+        <figure>
+          <div class="clip clip--tight" data-clip>
+            <video class="upright" src="/assets/video/basilisk-lake.mp4?v=20261016" poster="/assets/img/basilisk-lake-poster.jpg?v=20261016" autoplay muted loop playsinline preload="metadata" aria-label="Basilisk under way on the lake during a test run"></video>
+            <button class="clip-toggle" type="button" data-state="playing" aria-label="Pause video">
+              <svg class="i-play" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>
+              <svg class="i-pause" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 5h3.5v14H7zM13.5 5H17v14h-3.5z"/></svg>
+            </button>
+          </div>
+          <figcaption>Lake test.</figcaption>
+        </figure>
+        <figure>
+          <div class="clip clip--tight" data-clip>
+            <video class="upright" src="/assets/video/basilisk-ocean.mp4?v=20261016" poster="/assets/img/basilisk-ocean-poster.jpg?v=20261016" autoplay muted loop playsinline preload="metadata" aria-label="Basilisk deployed in the ocean at Dana Point"></video>
+            <button class="clip-toggle" type="button" data-state="playing" aria-label="Pause video">
+              <svg class="i-play" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>
+              <svg class="i-pause" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 5h3.5v14H7zM13.5 5H17v14h-3.5z"/></svg>
+            </button>
+          </div>
+          <figcaption>Ocean deployment at Dana Point.</figcaption>
+        </figure>
+      </div>
 
       <section class="p-sec">
         <h2>My contribution: the wind sensors</h2>
         <p>
           I designed the circuits for both wind sensors and built and calibrated them, with Andy
-          Maldonado co-building the housings. Both feed a Teensy 4.0 that logs to a microSD card.
+          Maldonado Martinez co-building the housings. Both feed a Teensy 4.0 that logs to a microSD
+          card.
         </p>
 
-        <div class="p-figs">
-          <figure class="p-fig p-fig--natural">
-            <a class="zoom" href="/assets/img/e80-anemometer.webp" target="_blank" rel="noopener">
-              <img src="/assets/img/e80-anemometer.webp?v=20261010" alt="Anemometer circuit diagram showing an A3144 Hall-effect sensor connected to Teensy 4.0 pin A0." loading="lazy" width="1007" height="805">
-            </a>
-            <figcaption>Anemometer circuit (A3144 Hall-effect switch)</figcaption>
-          </figure>
-          <figure class="p-fig p-fig--natural">
-            <a class="zoom" href="/assets/img/e80-weathervane.webp" target="_blank" rel="noopener">
-              <img src="/assets/img/e80-weathervane.webp?v=20261010" alt="Wind-direction sensor circuit diagram showing an analog sensor output connected through a resistor divider to Teensy 4.0 pin A1." loading="lazy" width="1012" height="805">
-            </a>
-            <figcaption>Wind vane circuit (MLX90316 rotary sensor)</figcaption>
-          </figure>
+        <div class="mrow">
+          <div class="mrow-text">
+            <h3>Anemometer (wind speed)</h3>
+            <p>
+              A magnet on the spinning cup shaft passes an A3144 Hall-effect switch once per rotation.
+              The switch pulls the line low, a 10 kΩ pull-up brings it back high, and the Teensy counts
+              pulses over a fixed window to get the rotation rate. I tested it repeatedly in Harvey
+              Mudd’s wind tunnel at increasing fan speeds, first watching the pulses on an oscilloscope
+              and then counting them in Arduino code. The result was a linear speed calibration with
+              R² = 0.99.
+            </p>
+          </div>
+          <div class="mrow-media">
+            <figure>
+              <div class="clip" data-clip>
+                <video src="/assets/video/basilisk-wind-tunnel.mp4?v=20261016" poster="/assets/img/basilisk-wind-tunnel-poster.jpg?v=20261016" autoplay muted loop playsinline preload="metadata" aria-label="The anemometer running in the wind tunnel at increasing fan speed"></video>
+                <button class="clip-toggle" type="button" aria-label="Pause video">
+                  <svg class="i-play" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>
+                  <svg class="i-pause" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 5h3.5v14H7zM13.5 5H17v14h-3.5z"/></svg>
+                </button>
+              </div>
+              <figcaption>Calibration run in the wind tunnel.</figcaption>
+            </figure>
+            <div class="thumbs">
+              <a class="thumb" href="/assets/img/basilisk-wind-tunnel.webp" target="_blank" rel="noopener">
+                <img src="/assets/img/basilisk-wind-tunnel.webp?v=20261010" alt="The anemometer set up in front of the wind tunnel, with its output on an oscilloscope and a laptop logging beside it" loading="lazy" width="1600" height="1200">
+                <span>First test: Hall-effect pulses on the scope</span>
+              </a>
+              <a class="thumb" href="/assets/img/e80-anemometer.webp" target="_blank" rel="noopener">
+                <img src="/assets/img/e80-anemometer.webp?v=20261010" alt="Anemometer circuit diagram showing an A3144 Hall-effect sensor connected to Teensy 4.0 pin A0." loading="lazy" width="1007" height="805">
+                <span>Anemometer circuit</span>
+              </a>
+            </div>
+          </div>
         </div>
 
-        <p>
-          <b>Anemometer (wind speed).</b> A magnet on the spinning cup shaft passes an A3144 Hall-effect
-          switch once per rotation. The switch pulls the line low, a 10 kΩ pull-up brings it back high,
-          and the Teensy counts pulses over a fixed window to get the rotation rate. I tested it
-          repeatedly in Harvey Mudd’s wind tunnel at increasing fan speeds, first watching the pulses on
-          an oscilloscope and then counting them in Arduino code. The result was a linear speed
-          calibration with R² = 0.99.
-        </p>
-        <p>
-          <b>Wind vane (direction).</b> An MLX90316 rotary position sensor reads the angle of stacked
-          magnets that turn with the vane, without touching them. Its analog output passes through a
-          voltage divider (18 kΩ / 30 kΩ) to stay within the Teensy’s input range. To calibrate it, I
-          swept the vane through a full circle and recorded the minimum and maximum voltages (0.094 V
-          and 3.000 V). I then mapped that range to angle, zeroed it to the boat’s forward direction,
-          and combined it with the IMU heading to get true wind direction.
-        </p>
-        <p>
-          <b>Mounting and waterproofing.</b> The sensor mounts had to balance two needs: sealed enough
-          to survive waves and rain, but easy to take apart for troubleshooting. We fed every wire
-          through penetrator bolts into a small sealed electronics enclosure. That trade-off paid off on
-          launch day: we found the vane’s magnets were oriented with the wrong polarity, so the sensor
-          was reading nothing, and we disassembled and fixed it in the field.
-        </p>
+        <div class="mrow mrow--flip">
+          <div class="mrow-text">
+            <h3>Wind vane (direction)</h3>
+            <p>
+              An MLX90316 rotary position sensor reads the angle of stacked magnets that turn with the
+              vane, without touching them. Its analog output passes through a voltage divider
+              (18 kΩ / 30 kΩ) to stay within the Teensy’s input range. To calibrate it, I swept the vane
+              through a full circle and recorded the minimum and maximum voltages (0.094 V and 3.000 V).
+              I then mapped that range to angle, zeroed it to the ASV’s forward direction, and combined
+              it with the IMU heading to get true wind direction.
+            </p>
+          </div>
+          <div class="mrow-media">
+            <figure>
+              <img class="upright" src="/assets/img/basilisk-full-build.jpg?v=20261016" alt="The wind vane and cup anemometer mounted above the sealed electronics box on the assembled ASV" loading="lazy" width="1200" height="1600">
+              <figcaption>Full build on the bench: wind vane (red) and anemometer mounted above the sealed electronics box.</figcaption>
+            </figure>
+            <div class="thumbs">
+              <a class="thumb" href="/assets/img/e80-weathervane.webp" target="_blank" rel="noopener">
+                <img src="/assets/img/e80-weathervane.webp?v=20261010" alt="Wind-direction sensor circuit diagram showing an analog sensor output connected through a resistor divider to Teensy 4.0 pin A1." loading="lazy" width="1012" height="805">
+                <span>Wind vane circuit</span>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="mrow">
+          <div class="mrow-text">
+            <h3>Mounting and waterproofing</h3>
+            <p>
+              The sensor mounts had to balance two needs: sealed enough to survive waves and rain, but
+              easy to take apart for troubleshooting. We fed every wire through penetrator bolts into a
+              small sealed electronics enclosure. That trade-off paid off on launch day: we found the
+              vane’s magnets were oriented with the wrong polarity, so the sensor was reading nothing,
+              and we disassembled and fixed it in the field.
+            </p>
+          </div>
+          <div class="mrow-media">
+            <figure>
+              <img class="upright" src="/assets/img/basilisk-electronics-stack.jpg?v=20261016" alt="The Teensy board stacked on the sensor protoboard inside the enclosure" loading="lazy" width="1200" height="1600">
+              <figcaption>Inside the enclosure: Teensy motherboard stacked on our sensor protoboard.</figcaption>
+            </figure>
+          </div>
+        </div>
       </section>
 
       <section class="p-sec">
         <h2>What we observed</h2>
         <p>
           These are results from one morning at one site, not general conclusions about offshore energy.
-          Across three deployments out to about 60 m from shore, neither wind nor sunlight changed
-          significantly with distance. The cove’s breakwater sheltered it: average wind was 2.16 m/s,
-          mostly from the southeast, and solar power density was about 72× the wind power density.
+          Across three runs at Dana Point, reaching about 60 m from shore, neither wind nor sunlight
+          changed significantly with distance. The cove’s breakwater sheltered it: average wind was
+          2.16 m/s, mostly from the southeast, and solar power density was about 72× the wind power
+          density.
         </p>
       </section>
 
@@ -157,14 +226,9 @@
           The anemometer stopped keeping up above about 5 m/s in the wind tunnel, because the magnet
           strength and sensor sensitivity limited the pulse count. That made the calibration valid only
           at low speeds. A stronger magnet or a more sensitive Hall sensor would extend the range, and
-          closed-loop steering would stop the boat drifting off its heading.
+          closed-loop steering would stop the ASV drifting off its heading.
         </p>
       </section>
-
-      <figure class="p-fig p-fig--solo">
-        <img src="/assets/img/basilisk-buoy.webp?v=20261010" alt="Basilisk floating on the water, with its cup anemometer and wind vane mounted above the frame" loading="lazy" width="1500" height="1125">
-        <figcaption>Basilisk deployed at Dana Point.</figcaption>
-      </figure>
 
       <div class="p-foot">
         <p class="team">
@@ -192,6 +256,6 @@
   </div>
 </footer>
 
-<script src="/assets/js/main.js?v=20261010" defer></script>
+<script src="/assets/js/main.js?v=20261016" defer></script>
 </body>
 </html>

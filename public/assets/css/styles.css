@@ -429,6 +429,68 @@ section[id]{scroll-margin-top:6.5rem}
 .p-next{display:inline-flex;align-items:center;gap:.5rem;font-size:.95rem;font-weight:700;color:var(--accent-ink);transition:color .2s,gap .25s var(--ease)}
 .p-next:hover{color:var(--accent);gap:.75rem}
 
+/* the role, tools and testing summary under the masthead. the type is set to
+   the size that keeps the whole line on one row at the reading measure, and
+   the padding is trimmed to buy the width to do it. */
+.p-facts{
+  font-size:.72rem;color:var(--ink-3);line-height:1.7;
+  margin:0 0 2.2rem;padding:.8rem .6rem;
+  border:1px solid var(--border);border-radius:var(--radius-sm);background:var(--card-2);
+}
+
+/* two clips under the masthead */
+.p-hero2{display:grid;grid-template-columns:1fr 1fr;gap:clamp(1rem,2.6vw,1.6rem);margin:0 0 2.6rem}
+.p-hero2 figure{display:flex;flex-direction:column;gap:.55rem;margin:0}
+.p-hero2 video,.p-hero2 img{
+  width:100%;border-radius:var(--radius-sm);border:1px solid var(--border);
+  background:#12100e;display:block;
+}
+.p-hero2 figcaption{font-size:.82rem;color:var(--ink-3);text-align:center}
+
+/* text on one side, its media on the other, alternating down the page */
+.mrow{display:grid;grid-template-columns:55fr 45fr;gap:clamp(1.4rem,3.4vw,2.6rem);align-items:start;margin:0 0 2.8rem}
+.mrow:first-of-type{margin-top:2rem}
+.mrow--flip{grid-template-columns:45fr 55fr}
+.mrow--flip .mrow-text{grid-column:2;grid-row:1}
+.mrow--flip .mrow-media{grid-column:1;grid-row:1}
+.mrow-text h3{font-size:clamp(1.05rem,2.1vw,1.25rem);margin:0 0 .7rem}
+.mrow-media figure{display:flex;flex-direction:column;gap:.55rem;margin:0}
+.mrow-media img,.mrow-media video{
+  width:100%;border-radius:var(--radius-sm);border:1px solid var(--border);
+  background:var(--card-2);display:block;
+}
+.mrow-media figcaption{font-size:.79rem;color:var(--ink-3)}
+
+/* upright media is capped rather than allowed to run the height of the row.
+   the two selectors are scoped so they outrank the width:100% above. */
+.p-hero2 .upright,.mrow-media .upright{width:auto;max-width:100%;max-height:420px;margin:0 auto;background:#12100e}
+
+/* small openings onto a document that opens full size */
+.thumbs{display:grid;grid-template-columns:1fr 1fr;gap:.7rem;margin-top:.9rem;align-items:start}
+.thumb{display:flex;flex-direction:column;gap:.35rem;cursor:zoom-in}
+.thumb img{width:100%;border-radius:10px;border:1px solid var(--border);background:var(--card-2);transition:border-color .2s}
+.thumb span{font-size:.75rem;color:var(--ink-3);line-height:1.45}
+.thumb:hover img{border-color:var(--accent)}
+
+/* a clip and the control that stops it */
+.clip{position:relative;display:block}
+/* hugs an upright clip so the control lands on the picture, not beside it */
+.clip--tight{width:fit-content;max-width:100%;margin:0 auto}
+.clip-toggle{
+  position:absolute;right:.55rem;bottom:.55rem;z-index:2;
+  width:36px;height:36px;padding:0;display:grid;place-items:center;
+  border:0;border-radius:50%;cursor:pointer;color:#fff;
+  background:rgba(22,13,7,.6);transition:background .2s;
+}
+.clip-toggle:hover{background:rgba(22,13,7,.85)}
+.clip-toggle svg{width:15px;height:15px;fill:currentColor}
+.clip-toggle .i-play{display:none}
+.clip-toggle[data-state="paused"] .i-play{display:block}
+.clip-toggle[data-state="paused"] .i-pause{display:none}
+
+/* a clip on a summary card takes the same frame the photos get */
+.p-focal video{width:100%;aspect-ratio:4/3;object-fit:cover;display:block;background:#12100e}
+
 /* ---------- responsive ---------- */
 @media (max-width:900px){
   .nav-links,.nav-mail,.nav-ico{display:none}
@@ -447,7 +509,13 @@ section[id]{scroll-margin-top:6.5rem}
 /* two board renders side by side stop being readable well before the phone
    breakpoint, so they stack while there is still width to split */
 @media (max-width:700px){
-  .p-figs{grid-template-columns:1fr}
+  .p-figs,.p-hero2{grid-template-columns:1fr}
+}
+/* a media row stacks with the text first, then the media it belongs to */
+@media (max-width:760px){
+  .mrow,.mrow--flip{grid-template-columns:1fr;gap:1.3rem}
+  .mrow--flip .mrow-text{grid-column:1;grid-row:1}
+  .mrow--flip .mrow-media{grid-column:1;grid-row:2}
 }
 @media (min-width:901px){.mobile-menu{display:none !important}}
 

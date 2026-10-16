@@ -146,6 +146,56 @@
     start();
   });
 
+  /* project-page clips. Each runs only while it is on screen, which stops
+     three of them from loading at once behind a visitor who is still reading
+     the top of the page, and each carries its own stop control. */
+  const clips = [...document.querySelectorAll('[data-clip]')];
+  if (clips.length) {
+    const sync = (clip, playing) => {
+      const btn = clip.querySelector('.clip-toggle');
+      if (!btn) return;
+      btn.dataset.state = playing ? 'playing' : 'paused';
+      btn.setAttribute('aria-label', playing ? 'Pause video' : 'Play video');
+    };
+
+    clips.forEach(clip => {
+      const v = clip.querySelector('video');
+      const btn = clip.querySelector('.clip-toggle');
+      if (!v) return;
+
+      /* a clip that starts itself is exactly what reduced motion is asking us
+         not to do, so leave it parked on its poster */
+      if (reduceMotion) v.autoplay = false;
+
+      if (btn) btn.addEventListener('click', () => {
+        if (v.paused) { v.play().catch(() => {}); } else { v.pause(); }
+      });
+      /* the browser can pause a clip too, so read the state back off the
+         element rather than assuming the button is the only way in */
+      v.addEventListener('play', () => sync(clip, true));
+      v.addEventListener('pause', () => sync(clip, false));
+      sync(clip, !v.paused);
+    });
+
+    const io = new IntersectionObserver(entries => {
+      for (const e of entries) {
+        const v = e.target.querySelector('video');
+        if (!v || !v.autoplay) continue;
+        if (e.isIntersecting) v.play().catch(() => {});
+        else v.pause();
+      }
+    }, { rootMargin: '150px' });
+    clips.forEach(c => io.observe(c));
+
+    document.addEventListener('visibilitychange', () => {
+      if (!document.hidden) return;
+      clips.forEach(c => {
+        const v = c.querySelector('video');
+        if (v) v.pause();
+      });
+    });
+  }
+
   const year = document.getElementById('year');
   if (year) year.textContent = new Date().getFullYear();
 })();
