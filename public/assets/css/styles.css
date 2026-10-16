@@ -413,6 +413,10 @@ section[id]{scroll-margin-top:6.5rem}
 .p-figs{display:grid;grid-template-columns:1fr 1fr;gap:clamp(.9rem,2.4vw,1.5rem);margin:0 0 2.6rem}
 .p-fig{display:flex;flex-direction:column;gap:.55rem;margin:0}
 .p-fig img{width:100%;border-radius:var(--radius-sm);border:1px solid var(--border);background:var(--card-2)}
+/* a pair can be any two shapes, and a board diagram is not something that can
+   be cropped, so the frame takes a fixed ratio and the drawing sits whole
+   inside it. That also lines the two captions up whatever the sources are. */
+.p-figs .p-fig img{aspect-ratio:4/3;object-fit:contain}
 .p-fig figcaption{font-size:.79rem;color:var(--ink-3)}
 /* a lone figure sits in the middle of the measure rather than stretching */
 .p-fig--solo{max-width:520px;margin:2.2rem auto 0}
