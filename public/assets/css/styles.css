@@ -387,6 +387,44 @@ a.contact-card:hover{transform:translateY(-5px);box-shadow:var(--shadow-lg);bord
    scroll and an anchor jump alike */
 section[id]{scroll-margin-top:6.5rem}
 
+/* ---------- project summary card ---------- */
+/* The homepage card is a summary now: image, the label line, a hook, a few
+   numbers, and a link out to the full write-up on its own page. */
+.proj-label{font-size:.82rem;font-weight:600;letter-spacing:.01em;color:var(--ink-3);margin:0 0 1.1rem}
+.pcard-stats{
+  display:grid;grid-template-columns:repeat(auto-fit,minmax(8rem,1fr));
+  gap:1rem;margin:0 0 1.4rem;padding-top:1.15rem;border-top:1px solid var(--border);
+}
+.pcard-stats li{display:flex;flex-direction:column;gap:.15rem;min-width:0}
+.pcard-stats b{font-size:1.22rem;font-weight:800;letter-spacing:-.03em;line-height:1.15;color:var(--accent-ink)}
+.pcard-stats span{font-size:.79rem;color:var(--ink-3);line-height:1.35}
+.pcard-link{display:inline-flex;align-items:center;gap:.45rem;font-size:.92rem;font-weight:700;color:var(--accent-ink);transition:color .2s,gap .25s var(--ease)}
+.pcard-link:hover{color:var(--accent);gap:.7rem}
+
+/* ---------- single project page ---------- */
+.p-page{padding:clamp(6.5rem,12vw,8rem) 0 clamp(3rem,6vw,4.5rem)}
+/* a narrower measure than the homepage: this is a page of prose, and the
+   side-by-side figures still have room at this width */
+.p-wrap{max-width:900px}
+.p-back{display:inline-flex;align-items:center;gap:.45rem;font-size:.88rem;font-weight:600;color:var(--ink-3);margin-bottom:1.8rem;transition:color .2s,gap .25s var(--ease)}
+.p-back:hover{color:var(--accent-ink);gap:.7rem}
+.p-title{font-size:clamp(1.9rem,4.6vw,2.9rem);margin:0 0 1.3rem}
+.p-lede{font-size:1.06rem;color:var(--ink-2);margin:0 0 2.2rem;max-width:68ch}
+.p-figs{display:grid;grid-template-columns:1fr 1fr;gap:clamp(.9rem,2.4vw,1.5rem);margin:0 0 2.6rem}
+.p-fig{display:flex;flex-direction:column;gap:.55rem;margin:0}
+.p-fig img{width:100%;border-radius:var(--radius-sm);border:1px solid var(--border);background:var(--card-2)}
+.p-fig figcaption{font-size:.79rem;color:var(--ink-3)}
+/* a lone figure sits in the middle of the measure rather than stretching */
+.p-fig--solo{max-width:520px;margin:2.2rem auto 0}
+.p-sec{margin:0 0 2.4rem}
+.p-sec h2{font-size:clamp(1.3rem,2.6vw,1.65rem);margin:0 0 .95rem}
+.p-sec p{color:var(--ink-2);margin:0 0 1.05rem;max-width:74ch}
+.p-sec p:last-child{margin-bottom:0}
+.p-foot{margin-top:2.6rem;padding-top:1.6rem;border-top:1px solid var(--border)}
+.p-tags{margin-bottom:1.7rem}
+.p-next{display:inline-flex;align-items:center;gap:.5rem;font-size:.95rem;font-weight:700;color:var(--accent-ink);transition:color .2s,gap .25s var(--ease)}
+.p-next:hover{color:var(--accent);gap:.75rem}
+
 /* ---------- responsive ---------- */
 @media (max-width:900px){
   .nav-links,.nav-mail,.nav-ico{display:none}
@@ -401,6 +439,11 @@ section[id]{scroll-margin-top:6.5rem}
   .about-card,.interests-grid,.contact-grid{grid-template-columns:1fr}
   .p-focal,.p-media-col{flex:1 1 100%;max-width:none}
   .stats{grid-template-columns:1fr;gap:.7rem}
+}
+/* two board renders side by side stop being readable well before the phone
+   breakpoint, so they stack while there is still width to split */
+@media (max-width:700px){
+  .p-figs{grid-template-columns:1fr}
 }
 @media (min-width:901px){.mobile-menu{display:none !important}}
 
