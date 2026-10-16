@@ -340,14 +340,6 @@ h1,h2,h3{margin:0;font-weight:800;letter-spacing:-.03em;line-height:1.1;color:va
 .link-out svg{flex:none}
 .link-out:hover{color:var(--accent);text-decoration:underline}
 
-/* a reel of schematics rather than photos: a drawing has to be shown whole, so
-   the frame takes the drawing's own ratio and keeps it on white instead of
-   cropping it the way a photograph can be cropped */
-.slideshow--schematics .slides{aspect-ratio:1007/805;background:#fff}
-.slide--flat{display:block;margin:0;cursor:zoom-in}
-.slide--flat img{width:100%;height:100%;object-fit:contain;display:block}
-.extra-note{margin:.55rem 0 0;font-size:.78rem;color:var(--ink-3)}
-
 /* ---------- makerspace ---------- */
 .space-card{padding:clamp(1.6rem,3.4vw,2.6rem)}
 .space-head{display:flex;flex-wrap:wrap;gap:.6rem;align-items:center;margin-bottom:.9rem}
@@ -417,6 +409,14 @@ section[id]{scroll-margin-top:6.5rem}
    be cropped, so the frame takes a fixed ratio and the drawing sits whole
    inside it. That also lines the two captions up whatever the sources are. */
 .p-figs .p-fig img{aspect-ratio:4/3;object-fit:contain}
+/* two diagrams already the same shape do not need that frame, and forcing one
+   on them would only add bars down the sides */
+.p-figs .p-fig--natural img{aspect-ratio:auto;object-fit:fill}
+/* a lone figure that opens the page */
+.p-fig--hero{margin:0 0 2.4rem}
+/* diagrams open full size, as they did on the card */
+.p-fig .zoom{display:block;cursor:zoom-in}
+.p-fig .zoom:hover img{border-color:var(--accent)}
 .p-fig figcaption{font-size:.79rem;color:var(--ink-3)}
 /* a lone figure sits in the middle of the measure rather than stretching */
 .p-fig--solo{max-width:520px;margin:2.2rem auto 0}

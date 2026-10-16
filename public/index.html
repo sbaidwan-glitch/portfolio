@@ -212,6 +212,28 @@
           </div>
         </article>
 
+        <!-- Basilisk -->
+        <article class="project card" data-bg="electronics">
+          <figure class="p-focal">
+            <img src="/assets/img/basilisk-buoy.webp?v=20261010" alt="Basilisk floating on the water, with its cup anemometer and wind vane mounted above the frame" loading="lazy" width="1500" height="1125">
+          </figure>
+          <div class="p-body">
+            <p class="proj-label">Experimental Engineering course (E80) · Team of 4 · Spring 2026</p>
+            <h3>Basilisk: Autonomous Wind &amp; Solar Survey Boat</h3>
+            <p class="one-liner">
+              A floating robot that logged wind and sunlight offshore to size up renewable energy. I
+              designed and calibrated its wind sensors.
+            </p>
+            <ul class="pcard-stats">
+              <li><b>2</b><span>sensors designed</span></li>
+              <li><b>R² = 0.99</b><span>wind-tunnel calibration</span></li>
+              <li><b>14,000+</b><span>direction samples</span></li>
+              <li><b>3</b><span>ocean deployments</span></li>
+            </ul>
+            <a class="pcard-link" href="/projects/basilisk/">Read the build <span aria-hidden="true">&rarr;</span></a>
+          </div>
+        </article>
+
         <!-- MuddSub -->
         <article class="project card">
           <figure class="p-focal p-focal--cutout">
@@ -327,62 +349,6 @@
       </header>
 
       <div class="projects">
-
-        <!-- Basilisk -->
-        <article class="project card" data-bg="electronics">
-          <div class="p-media-col">
-            <figure class="p-focal">
-              <img src="/assets/img/basilisk-buoy.webp?v=20261010" alt="Basilisk floating on the water, with its cup anemometer and wind vane mounted above the frame" loading="lazy" width="1500" height="1125">
-            </figure>
-            <div class="slideshow slideshow--schematics" data-slideshow data-static>
-              <div class="slides">
-                <a class="slide slide--flat is-active" href="/assets/img/e80-anemometer.webp" target="_blank" rel="noopener">
-                  <img src="/assets/img/e80-anemometer.webp?v=20261010" alt="Anemometer circuit diagram showing an A3144 Hall-effect sensor connected to Teensy 4.0 pin A0." loading="lazy" width="1007" height="805">
-                </a>
-                <a class="slide slide--flat" href="/assets/img/e80-weathervane.webp" target="_blank" rel="noopener">
-                  <img src="/assets/img/e80-weathervane.webp?v=20261010" alt="Wind-direction sensor circuit diagram showing an analog sensor output connected through a resistor divider to Teensy 4.0 pin A1." loading="lazy" width="1012" height="805">
-                </a>
-              </div>
-              <div class="slide-dots" role="tablist" aria-label="Basilisk sensor schematics">
-                <button class="dot is-active" type="button" role="tab" aria-selected="true" aria-label="Anemometer schematic"></button>
-                <button class="dot" type="button" role="tab" aria-selected="false" aria-label="Wind-direction schematic"></button>
-              </div>
-              <p class="extra-note">Sensor circuits I designed. Swipe or click to open full size.</p>
-            </div>
-          </div>
-          <div class="p-body">
-            <div class="p-top">
-              <span class="date">Spring 2026 · Experimental Engineering</span>
-              <span class="chip chip-team">Coursework · Team</span>
-            </div>
-            <h3>Basilisk — Autonomous Surface Vehicle</h3>
-            <p class="one-liner">A sensor-laden floating robot that measures wind and sun offshore to help site marine renewable energy.</p>
-            <p class="desc">
-              Offshore wind and floating solar farms need good local data on wind speed, wind direction,
-              and solar irradiance. For E80 the team built Basilisk, an autonomous surface vehicle that
-              logs all three while underway.
-            </p>
-            <p class="contribution">
-              <span>My contribution</span>
-              I designed two of the vehicle’s three sensing systems, the Hall-effect anemometer and
-              magnetic wind-direction sensor, integrated them with a Teensy 4.0 and microSD logging, and
-              calibrated them against reference instruments before field deployment.
-            </p>
-            <p class="result">
-              <span>What we observed</span>
-              These are observations from a single deployment, not general conclusions about offshore
-              energy. At Dana Point the vehicle measured no significant change in wind or irradiance with
-              distance from shore, and solar power density in the cove was roughly 76× wind power density.
-              The anemometer lost pulse accuracy at higher wind speeds, and the vehicle drifted off
-              heading without closed-loop control. Both are clear next steps.
-            </p>
-            <p class="team">Team: <span>Samara Baidwan, Ava Barasch, Andy Maldonado, Felix Peng</span></p>
-            <ul class="tags">
-              <li>Teensy 4.0</li><li>Hall-effect sensors</li><li>Photodiodes</li><li>Op-amp circuits</li>
-              <li>Sensor calibration</li><li>microSD logging</li><li>3D printing</li>
-            </ul>
-          </div>
-        </article>
 
         <!-- Fluorescence -->
         <article class="project project--text card">
