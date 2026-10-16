@@ -432,6 +432,9 @@ section[id]{scroll-margin-top:6.5rem}
 /* the role, tools and testing summary under the masthead. the type is set to
    the size that keeps the whole line on one row at the reading measure, and
    the padding is trimmed to buy the width to do it. */
+/* the poster, between the last section and the closing rule */
+.p-poster{display:inline-flex;vertical-align:top;margin:0 0 .4rem}
+
 .p-facts{
   font-size:.72rem;color:var(--ink-3);line-height:1.7;
   margin:0 0 2.2rem;padding:.8rem .6rem;
