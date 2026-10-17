@@ -536,24 +536,31 @@ section[id]{scroll-margin-top:6.5rem}
 }
 .methods strong{color:var(--ink);font-weight:700}
 
-/* thumbnails that open full size. the grid itself is deliberately compact;
-   the detail is meant to be read in the viewer, not in the column */
-.gallery{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:.55rem}
-.gal-item{display:flex;flex-direction:column;gap:.35rem;margin:0}
+/* three photos stacked in the column beside the steps, each opening full
+   size. on wide screens the stack is pinned to the text's own height, so it
+   stops level with the list rather than running past it */
+.gallery{display:flex;flex-direction:column;gap:.55rem;min-height:0}
+.gal-item{display:flex;flex-direction:column;gap:.35rem;margin:0;min-height:0}
 .gal-open{
   display:block;width:100%;padding:0;border:1px solid var(--border);
   border-radius:var(--radius-sm);overflow:hidden;background:var(--card-2);
-  cursor:zoom-in;transition:border-color .2s;
+  cursor:zoom-in;transition:border-color .2s;min-height:0;
 }
 .gal-open:hover,.gal-open:focus-visible{border-color:var(--accent)}
-.gal-open img{
-  display:block;width:100%;aspect-ratio:1/1;object-fit:cover;
-  transition:transform .45s var(--ease);
-}
+.gal-open img{display:block;width:100%;aspect-ratio:4/3;object-fit:cover;transition:transform .45s var(--ease)}
+/* the charge-prep photo has its subjects high in the frame, so a wide crop
+   needs to sit towards the top rather than centre on the buckets */
+.gal-open img.gal-top{object-position:50% 15%}
 .gal-open:hover img{transform:scale(1.05)}
 .gal-item figcaption{font-size:.72rem;color:var(--ink-3);line-height:1.35}
-@media (max-width:900px){.gallery{grid-template-columns:repeat(2,minmax(0,1fr))}}
-@media (max-width:700px){.gallery{grid-template-columns:1fr}}
+@media (min-width:761px){
+  .mrow--balanced{align-items:stretch}
+  .mrow--balanced .mrow-media{position:relative;min-height:0}
+  .mrow--balanced .gallery{position:absolute;inset:0}
+  .mrow--balanced .gal-item{flex:1}
+  .mrow--balanced .gal-open{flex:1;min-height:0}
+  .mrow--balanced .gal-open img{height:100%;object-fit:cover}
+}
 
 /* the viewer a thumbnail opens into */
 .lightbox{
