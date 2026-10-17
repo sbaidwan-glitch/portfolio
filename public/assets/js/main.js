@@ -199,6 +199,30 @@
     });
   }
 
+  /* project galleries: the thumbnails are small on purpose, so a click opens
+     the picture full size. <dialog> gives the Esc key, the focus trap and the
+     backdrop for free; the close button is for anyone who does not know Esc. */
+  const lightbox = document.getElementById('lightbox');
+  if (lightbox) {
+    const lbImg = lightbox.querySelector('img');
+    const lbCap = lightbox.querySelector('.lightbox-cap');
+    const lbClose = lightbox.querySelector('.lightbox-close');
+
+    document.querySelectorAll('.gal-open').forEach(btn => {
+      btn.addEventListener('click', () => {
+        lbImg.src = btn.dataset.full;
+        lbImg.alt = btn.dataset.alt || '';
+        lbCap.textContent = btn.dataset.caption || '';
+        lbCap.hidden = !btn.dataset.caption;
+        lightbox.showModal();
+      });
+    });
+
+    if (lbClose) lbClose.addEventListener('click', () => lightbox.close());
+    /* a click on the backdrop reports the dialog itself, not its contents */
+    lightbox.addEventListener('click', e => { if (e.target === lightbox) lightbox.close(); });
+  }
+
   const year = document.getElementById('year');
   if (year) year.textContent = new Date().getFullYear();
 })();

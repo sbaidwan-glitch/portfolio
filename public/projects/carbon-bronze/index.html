@@ -83,14 +83,26 @@
         <h1 class="p-title">Lead-Free Carbon-Bronze Alloys</h1>
       </header>
 
-      <p class="p-lede">
-        Lead makes bronze easy to machine and gives sliding parts the lubricity they need, but it’s
-        being legislated out of bushings and bearings for health and environmental reasons. Earlier
-        work in the lab pointed to carbon as a replacement. The catch: carbon barely dissolves in
-        copper. So the real problem is finding compositions and heat treatments that keep lubricating
-        graphite in the microstructure. Over summer 2026 at UNSW Sydney, our team of three made and
-        characterized 21 experimental carbon-bronze alloys.
-      </p>
+      <div class="mrow">
+        <div class="mrow-text">
+          <p class="p-lede">
+            Lead makes bronze easy to machine and gives sliding parts the lubricity they need, but it’s
+            being legislated out of bushings and bearings for health and environmental reasons. Earlier
+            work in the lab pointed to carbon as a replacement. The catch: carbon barely dissolves in
+            copper. So the real problem is finding compositions and heat treatments that keep lubricating
+            graphite in the microstructure. Over summer 2026 at UNSW Sydney, our team of three made and
+            characterized 21 experimental carbon-bronze alloys. I calculated compositions, prepared
+            charges, and ran melting, heat treatment, sample preparation, optical microscopy, and
+            hardness testing, and I improved the data visualization in our MATLAB analysis.
+          </p>
+        </div>
+        <div class="mrow-media">
+          <figure>
+            <img src="/assets/img/bushings-bearings.webp?v=20261017" alt="A group of ball and roller bearings" loading="lazy" width="802" height="470">
+            <figcaption>Photo: fhdbearings.com</figcaption>
+          </figure>
+        </div>
+      </div>
 
       <p class="p-facts">
         Role: alloy processing &amp; characterization · Team: Samara Baidwan, Katie Cheng, Joshua
@@ -98,73 +110,96 @@
         melter, optical microscopy, SEM/EDS, MATLAB
       </p>
 
-      <figure class="p-fig p-fig--hero">
-        <img src="/assets/img/unsw-arcmelt.webp?v=20261010" alt="Molten carbon-bronze alloy glowing inside the chamber of a mini arc melter" loading="lazy" width="1200" height="900">
-        <figcaption>Melting a copper alloy charge in the mini arc melter.</figcaption>
-      </figure>
-
       <section class="p-sec">
         <div class="mrow">
           <div class="mrow-text">
-            <h2>My contribution</h2>
-            <p>
-              I calculated alloy compositions, prepared the charges, and carried out arc melting, heat
-              treatment, metallographic preparation, optical microscopy, and hardness testing. Along
-              the way I refined our hardness-testing procedure so measurements were consistent across
-              samples.
-            </p>
+            <h2>Methods</h2>
+            <p>From raw elements to friction tests:</p>
+            <ol class="methods">
+              <li><strong>Charge preparation:</strong> Pure elements cut and weighed into a Cu–Mn–Ni–Al bronze base with added carbon.</li>
+              <li><strong>Melting &amp; casting:</strong> Alloys combined in arc melters and an induction furnace, then cast as small buttons for analysis and large buttons for friction testing.</li>
+              <li><strong>Heat treatment:</strong> Held at up to 900 °C in a muffle furnace and water-quenched, to approach equilibrium microstructures.</li>
+              <li><strong>Grinding &amp; polishing:</strong> Sections polished to a 1 µm finish.</li>
+              <li><strong>Optical microscopy:</strong> Stitched images of each polished surface.</li>
+              <li><strong>Image analysis:</strong> A MATLAB thresholding algorithm measures carbon within selected regions.</li>
+              <li><strong>SEM &amp; EDS:</strong> Electron imaging and composition mapping to identify each phase.</li>
+              <li><strong>Hardness testing:</strong> Trends across compositions and heat treatments.</li>
+              <li><strong>Pin-on-disk friction testing:</strong> Friction and lubricity of the most promising alloys.</li>
+            </ol>
           </div>
           <div class="mrow-media">
-            <figure>
-              <img src="/assets/img/unsw-lab2.webp?v=20261010" alt="Working in the workshop during the UNSW summer placement" loading="lazy" width="1200" height="900">
-              <figcaption>In the workshop at UNSW Sydney.</figcaption>
-            </figure>
-          </div>
-        </div>
-
-        <div class="mrow mrow--flip">
-          <div class="mrow-text">
-            <h2>Measuring the carbon</h2>
-            <p>
-              The question for every alloy was how much carbon survived, and in what form. The lab’s
-              MATLAB image-analysis pipeline quantifies carbon area fraction and particle-size
-              distributions across compositions and heat treatments. I improved its data
-              visualization, reformatting the histograms with clearer legends, layout, and
-              carbon-percentage labels so results could be compared at a glance, and adapted it to
-              process image sets stored on an external drive. The team then used SEM and EDS to check
-              whether the black inclusions were lubricating graphite or hard, abrasive carbides,
-              because only graphite helps a bearing.
-            </p>
-          </div>
-          <div class="mrow-media">
-            <figure>
-              <img src="/assets/img/unsw-carbon-regions.webp?v=20261017" alt="Three panels comparing a polished alloy sample, the old rectangular measurement regions, and the new freehand region" loading="lazy" width="1926" height="748">
-              <figcaption>Choosing where to measure: a polished sample, the old rectangular regions, and the new freehand region.</figcaption>
-            </figure>
+            <div class="gallery">
+              <figure class="gal-item">
+                <button class="gal-open" type="button" data-full="/assets/img/unsw-lab2.webp?v=20261010" data-alt="Samara and Katie preparing alloy charges in the workshop at UNSW Sydney" data-caption="Charge prep with Katie!">
+                  <img src="/assets/img/unsw-lab2.webp?v=20261010" alt="Samara and Katie preparing alloy charges in the workshop at UNSW Sydney" loading="lazy" width="1200" height="900">
+                </button>
+                <figcaption>Charge prep with Katie!</figcaption>
+              </figure>
+              <figure class="gal-item">
+                <button class="gal-open" type="button" data-full="/assets/img/arcmelt-button-melting.webp?v=20261017" data-alt="A button of alloy melting beneath the electrode inside the mini arc melter" data-caption="Arc melting a button.">
+                  <img src="/assets/img/arcmelt-button-melting.webp?v=20261017" alt="A button of alloy melting beneath the electrode inside the mini arc melter" loading="lazy" width="1200" height="1600">
+                </button>
+                <figcaption>Arc melting a button.</figcaption>
+              </figure>
+              <figure class="gal-item">
+                <button class="gal-open" type="button" data-full="/assets/img/arcmelt-button-closeup.webp?v=20261017" data-alt="Cast carbon-bronze buttons on the copper hearth of the mini arc melter" data-caption="Cast buttons on the copper hearth.">
+                  <img src="/assets/img/arcmelt-button-closeup.webp?v=20261017" alt="Cast carbon-bronze buttons on the copper hearth of the mini arc melter" loading="lazy" width="1200" height="1600">
+                </button>
+                <figcaption>Cast buttons on the copper hearth.</figcaption>
+              </figure>
+            </div>
           </div>
         </div>
       </section>
 
       <section class="p-sec">
-        <h2>Preliminary findings</h2>
+        <h2>Measuring the carbon</h2>
         <p>
-          Several of the 21 alloys retained significant carbon, and like a graphite pencil they leave
-          a carbon trail when smeared across paper. That’s an early sign of the self-lubricating
-          behavior bushings and bearings depend on, but a mark on paper isn’t by itself a test of
-          bearing performance. We then selected the most promising alloys and cast larger samples in a
-          bigger arc melter for pin-on-disk friction testing.
+          The question for every alloy was how much carbon survived, and in what form. The lab’s
+          MATLAB pipeline thresholds the optical images inside hand-drawn regions of interest that
+          represent the bulk alloy, excluding large carbon masses that never dissolved during melting.
+          The detected carbon area estimates each alloy’s carbon content, and particle counts per mm²
+          are sorted into four size groups for each heat treatment. I improved the pipeline’s data
+          visualization, reformatting the histograms with clearer legends, layout, and
+          carbon-percentage labels so results could be compared at a glance, and adapted it to process
+          image sets stored on an external drive.
         </p>
-
-        <figure class="p-fig p-fig--solo">
-          <div class="clip" data-clip>
-            <video src="/assets/video/pin-on-disk.mp4?v=20261010" poster="/assets/img/pin-on-disk-poster.webp?v=20261010" autoplay muted loop playsinline preload="metadata" aria-label="Pin-on-disk friction testing at UNSW Sydney"></video>
-            <button class="clip-toggle" type="button" data-state="playing" aria-label="Pause video">
-              <svg class="i-play" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>
-              <svg class="i-pause" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 5h3.5v14H7zM13.5 5H17v14h-3.5z"/></svg>
-            </button>
-          </div>
-          <figcaption>Pin-on-disk friction testing.</figcaption>
+        <figure class="p-fig p-fig--wide">
+          <img src="/assets/img/unsw-carbon-regions.webp?v=20261017" alt="Three panels comparing a polished alloy sample, the old rectangular measurement regions, and the new freehand region" loading="lazy" width="1926" height="748">
+          <figcaption>Choosing where to measure: a polished sample, the old rectangular regions, and the new freehand region.</figcaption>
         </figure>
+      </section>
+
+      <section class="p-sec">
+        <div class="mrow">
+          <div class="mrow-text">
+            <h2>Preliminary findings</h2>
+            <p>
+              EDS line scans confirmed that the black inclusions are graphite, not hard carbides, which
+              is the form of carbon a self-lubricating bearing needs. Several of the 21 alloys retained
+              significant carbon, and like a graphite pencil they leave a carbon trail when smeared
+              across paper. That’s an early sign of the self-lubricating behavior bushings and bearings
+              depend on, but a mark on paper isn’t by itself a test of bearing performance. We then
+              selected the most promising alloys and cast larger samples in a bigger arc melter for
+              pin-on-disk friction testing.
+            </p>
+          </div>
+          <div class="mrow-media">
+            <figure>
+              <img src="/assets/img/carbon-drawings.webp?v=20261017" alt="Cast alloy buttons next to a piece of graphite on paper, with the marks they leave when smeared" loading="lazy" width="1200" height="1600">
+            </figure>
+            <figure>
+              <div class="clip" data-clip>
+                <video src="/assets/video/pin-on-disk.mp4?v=20261010" poster="/assets/img/pin-on-disk-poster.webp?v=20261010" autoplay muted loop playsinline preload="metadata" aria-label="Pin-on-disk friction testing at UNSW Sydney"></video>
+                <button class="clip-toggle" type="button" data-state="playing" aria-label="Pause video">
+                  <svg class="i-play" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>
+                  <svg class="i-pause" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 5h3.5v14H7zM13.5 5H17v14h-3.5z"/></svg>
+                </button>
+              </div>
+              <figcaption>Pin-on-disk friction testing.</figcaption>
+            </figure>
+          </div>
+        </div>
       </section>
 
       <section class="p-sec">
@@ -198,6 +233,14 @@
     <a href="#main">Back to top ↑</a>
   </div>
 </footer>
+
+<dialog class="lightbox" id="lightbox" aria-label="Image viewer">
+  <button class="lightbox-close" type="button" aria-label="Close image">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg>
+  </button>
+  <img alt="">
+  <p class="lightbox-cap"></p>
+</dialog>
 
 <script src="/assets/js/main.js?v=20261017" defer></script>
 </body>
