@@ -97,22 +97,27 @@
         fabrication
       </p>
 
-      <figure class="p-fig p-fig--hero">
-        <img src="/assets/img/muddsub-enclosure-render.webp?v=20261017" alt="CAD render of Crush’s electronics enclosure, semi-transparent, with color-coded electronics placeholders inside" loading="lazy" width="772" height="622">
-        <figcaption>Crush’s electronics enclosure in CAD, with color-coded electronics placeholders.</figcaption>
-      </figure>
-
       <section class="p-sec">
-        <h2>Picking up a legacy design</h2>
-        <p>
-          I started by working through legacy CAD, fabrication documentation, seal calculations, and
-          handoff notes. I sorted out what already existed, what needed rework, and which decisions
-          still needed checking. The rule I’ve worked by since: a drawing records design intent, not
-          verified behavior. Before we treat an old calculation as a manufacturing instruction, we
-          review it with experienced members and shop staff. I turned that audit into specific work
-          packages: panel machining, lid repair, latch alignment, dowel-located assembly, sealing
-          interfaces, electronics mounts, and mission actuators.
-        </p>
+        <div class="mrow mrow--flip">
+          <div class="mrow-text">
+            <h2>Picking up a legacy design</h2>
+            <p>
+              I started by working through legacy CAD, fabrication documentation, seal calculations,
+              and handoff notes. I sorted out what already existed, what needed rework, and which
+              decisions still needed checking. The rule I’ve worked by since: a drawing records design
+              intent, not verified behavior. Before we treat an old calculation as a manufacturing
+              instruction, we review it with experienced members and shop staff. I turned that audit
+              into specific work packages: panel machining, lid repair, latch alignment, dowel-located
+              assembly, sealing interfaces, electronics mounts, and mission actuators.
+            </p>
+          </div>
+          <div class="mrow-media">
+            <figure>
+              <img src="/assets/img/sub-crush.webp?v=20261017" alt="CAD model of Crush, MuddSub’s autonomous underwater vehicle" loading="lazy" width="1074" height="737">
+              <figcaption>Crush in CAD.</figcaption>
+            </figure>
+          </div>
+        </div>
 
         <div class="mrow">
           <div class="mrow-text">
@@ -128,20 +133,22 @@
             </p>
           </div>
           <div class="mrow-media">
-            <figure>
-              <img src="/assets/img/muddsub-mill.webp?v=20261017" alt="An aluminum enclosure panel clamped on the mill, with a milled pocket finished" loading="lazy" width="1600" height="1200">
-              <figcaption>Enclosure panel on the mill.</figcaption>
-            </figure>
-            <figure>
-              <div class="clip clip--tight" data-clip>
-                <video class="upright" src="/assets/video/muddsub-mill.mp4?v=20261017" poster="/assets/img/muddsub-mill-poster.jpg?v=20261017" autoplay muted loop playsinline preload="metadata" aria-label="Machining an enclosure panel on the mill"></video>
-                <button class="clip-toggle" type="button" data-state="playing" aria-label="Pause video">
-                  <svg class="i-play" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>
-                  <svg class="i-pause" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 5h3.5v14H7zM13.5 5H17v14h-3.5z"/></svg>
-                </button>
+            <div class="slideshow slideshow--tall" data-slideshow data-static>
+              <div class="slides">
+                <figure class="slide slide--photo is-active">
+                  <img src="/assets/img/muddsub-panel.webp?v=20261017" alt="An aluminum enclosure panel clamped on the mill, with a milled pocket finished" loading="lazy" width="1200" height="1600">
+                  <figcaption>Enclosure panel on the mill.</figcaption>
+                </figure>
+                <figure class="slide slide--video">
+                  <video src="/assets/video/muddsub-mill.mp4?v=20261017" poster="/assets/img/muddsub-mill-poster.jpg?v=20261017" controls muted loop playsinline preload="metadata" aria-label="Machining an enclosure panel on the mill"></video>
+                  <figcaption>Setting up on the mill.</figcaption>
+                </figure>
               </div>
-              <figcaption>Setting up on the mill.</figcaption>
-            </figure>
+              <div class="slide-dots" role="tablist" aria-label="Machine shop photos and clips">
+                <button class="dot is-active" type="button" role="tab" aria-selected="true" aria-label="Photo: enclosure panel on the mill"></button>
+                <button class="dot" type="button" role="tab" aria-selected="false" aria-label="Clip: setting up on the mill"></button>
+              </div>
+            </div>
           </div>
         </div>
 
@@ -233,10 +240,10 @@
       <section class="p-sec">
         <h2>What’s next</h2>
         <ol class="p-steps">
-          <li>Reviewed drawings &amp; machining plans</li>
-          <li>Finished panels &amp; lid rework</li>
-          <li>Verified latch geometry</li>
-          <li>Assembled &amp; leak-tested seals</li>
+          <li class="is-done"><span class="visually-hidden">Done: </span>Create mechanical drawings &amp; machining plans</li>
+          <li>Verify latch geometry</li>
+          <li>Machine panels &amp; lid rework</li>
+          <li>Assemble &amp; leak-test seals</li>
           <li>Electronics integration</li>
           <li>Actuator prototypes in the water</li>
         </ol>
