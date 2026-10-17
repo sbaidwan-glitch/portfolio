@@ -244,8 +244,10 @@ h1,h2,h3{margin:0;font-weight:800;letter-spacing:-.03em;line-height:1.1;color:va
   transition:transform .35s var(--ease),box-shadow .35s,border-color .35s;
 }
 .project:hover{transform:translateY(-4px);box-shadow:var(--shadow-lg);border-color:var(--border-2)}
-.project--text .p-body,.project--stack .p-body{flex:1 1 100%}
-.project--stack .p-focal{flex:1 1 100%}
+.project--text .p-body{flex:1 1 100%}
+/* an older card that keeps its clip and CAD to the left of the write-up */
+.project--split .p-gallery{flex:1 1 52%}
+.project--split .p-body{flex:1 1 44%}
 .now-card{background:linear-gradient(180deg,#fffdfb 0%,var(--card-2) 100%)}
 .p-top{display:flex;flex-wrap:wrap;align-items:center;gap:.55rem;margin-bottom:1rem}
 .date{font-size:.78rem;font-weight:600;letter-spacing:.04em;color:var(--ink-3)}
@@ -291,7 +293,6 @@ h1,h2,h3{margin:0;font-weight:800;letter-spacing:-.03em;line-height:1.1;color:va
 
 /* media gallery (video + CAD renders) */
 .p-gallery{display:flex;flex-wrap:wrap;gap:clamp(.9rem,2vw,1.2rem) clamp(1rem,2.4vw,2rem);align-items:flex-start}
-.project--stack .p-gallery{flex:1 1 100%}
 .media{flex:1 1 20rem;min-width:0;margin:0;display:flex;flex-direction:column;gap:.5rem}
 .media img,.media video{width:100%;border-radius:16px;border:1px solid var(--border);display:block}
 .media img{background:var(--card-2)}
@@ -636,6 +637,9 @@ section[id]{scroll-margin-top:6.5rem}
   .mrow,.mrow--flip{grid-template-columns:1fr;gap:1.3rem}
   .mrow--flip .mrow-text{grid-column:1;grid-row:1}
   .mrow--flip .mrow-media{grid-column:1;grid-row:2}
+  /* the older cards put the write-up first once they stack */
+  .project--split .p-gallery,.project--split .p-body{flex:1 1 100%}
+  .project--split .p-gallery{order:2}
 }
 @media (min-width:901px){.mobile-menu{display:none !important}}
 
