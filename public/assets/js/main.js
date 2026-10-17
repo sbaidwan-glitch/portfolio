@@ -94,6 +94,9 @@
         d.classList.toggle('is-active', k === i);
         d.setAttribute('aria-selected', String(k === i));
       });
+      /* a reel whose caption sits under the frame rather than on the slide */
+      const cap = box.querySelector('.slide-caption');
+      if (cap) cap.textContent = slides[i].dataset.caption || '';
     };
 
     /* a slide carrying a clip holds the reel rather than rotating away

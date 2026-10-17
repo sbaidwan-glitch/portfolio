@@ -322,13 +322,15 @@ h1,h2,h3{margin:0;font-weight:800;letter-spacing:-.03em;line-height:1.1;color:va
 .slide--photo img,.slide--video video{width:100%;height:100%;object-fit:cover;object-position:50% 50%;display:block}
 /* the caption sits above the clip rather than below it, so it never collides
    with the playback controls */
-.slide--photo figcaption,.slide--video figcaption{
+.slide--video figcaption{
   position:absolute;left:0;right:0;top:0;padding:.5rem .75rem 2rem;
   font-size:.75rem;color:#fff;
   /* holds enough density under the text to stay legible over a bright frame */
   background:linear-gradient(rgba(22,13,7,.8) 0%,rgba(22,13,7,.62) 55%,transparent 100%);
 }
 .slide-dots{display:flex;gap:.1rem;margin-top:.35rem}
+/* a caption set under the frame instead of over the picture */
+.slideshow .slide-caption{font-size:.82rem;color:var(--ink-3);line-height:1.4;margin:.15rem 0 0}
 .dot{width:26px;height:26px;padding:0;border:0;background:none;cursor:pointer;display:grid;place-items:center}
 .dot::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--border-2);transition:background .25s,transform .25s var(--ease)}
 .dot.is-active::before{background:var(--accent);transform:scale(1.3)}
@@ -426,10 +428,20 @@ section[id]{scroll-margin-top:6.5rem}
 .p-sec h2{font-size:clamp(1.3rem,2.6vw,1.65rem);margin:0 0 .95rem}
 .p-sec p{color:var(--ink-2);margin:0 0 1.05rem;max-width:74ch}
 .p-sec p:last-child{margin-bottom:0}
+/* one section carries its own soft panel so it reads apart from the rest of
+   the page without breaking the page's tone */
+.p-sec--highlight{
+  padding:clamp(1.4rem,3vw,2rem);
+  border:1px solid var(--border);border-left:3px solid var(--accent);
+  border-radius:var(--radius-sm);
+  background:linear-gradient(180deg,var(--card-2),var(--card));
+}
 .p-foot{margin-top:2.6rem;padding-top:1.6rem;border-top:1px solid var(--border)}
 .p-tags{margin-bottom:1.7rem}
 .p-next{display:inline-flex;align-items:center;gap:.5rem;font-size:.95rem;font-weight:700;color:var(--accent-ink);transition:color .2s,gap .25s var(--ease)}
 .p-next:hover{color:var(--accent);gap:.75rem}
+.p-site{display:inline-flex;align-items:center;gap:.4rem;font-size:.92rem;font-weight:700;color:var(--accent-ink);margin-bottom:1.6rem;transition:color .2s,gap .25s var(--ease)}
+.p-site:hover{color:var(--accent);gap:.65rem}
 
 /* the role, tools and testing summary under the masthead. the type is set to
    the size that keeps the whole line on one row at the reading measure, and
@@ -488,6 +500,8 @@ section[id]{scroll-margin-top:6.5rem}
 .mrow-text h3{font-size:clamp(1.05rem,2.1vw,1.25rem);margin:0 0 .7rem}
 /* a row heading sits in the outline at the same level as the section headings */
 .mrow-text h2{font-size:clamp(1.3rem,2.6vw,1.65rem);margin:0 0 .95rem}
+/* a second heading in the same column, where one tall image spans both */
+.mrow-text h2:not(:first-child){margin-top:2.2rem}
 .mrow-media figure{display:flex;flex-direction:column;gap:.55rem;margin:0}
 /* two pieces of media stacked in one column */
 .mrow-media figure + figure{margin-top:1.1rem}
