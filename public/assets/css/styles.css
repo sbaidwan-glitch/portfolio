@@ -424,6 +424,7 @@ section[id]{scroll-margin-top:6.5rem}
 .p-fig figcaption{font-size:.79rem;color:var(--ink-3)}
 /* a lone figure sits in the middle of the measure rather than stretching */
 .p-fig--solo{max-width:520px;margin:2.2rem auto 0}
+.p-fig--solo video{width:100%;display:block;border-radius:var(--radius-sm);border:1px solid var(--border);background:#12100e}
 .p-sec{margin:0 0 2.4rem}
 .p-sec h2{font-size:clamp(1.3rem,2.6vw,1.65rem);margin:0 0 .95rem}
 .p-sec p{color:var(--ink-2);margin:0 0 1.05rem;max-width:74ch}
