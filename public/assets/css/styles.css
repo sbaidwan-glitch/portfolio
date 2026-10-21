@@ -245,9 +245,10 @@ h1,h2,h3{margin:0;font-weight:800;letter-spacing:-.03em;line-height:1.1;color:va
 }
 .project:hover{transform:translateY(-4px);box-shadow:var(--shadow-lg);border-color:var(--border-2)}
 .project--text .p-body{flex:1 1 100%}
-/* an older card that keeps its clip and CAD to the left of the write-up */
-.project--split .p-gallery{flex:1 1 52%}
-.project--split .p-body{flex:1 1 44%}
+/* an older card that keeps its clip and CAD to the left of the write-up,
+   sized like the focal media on the cards above */
+.project--split .p-gallery{flex:1 1 36%;max-width:420px}
+.project--split .p-body{flex:1 1 56%}
 /* match the 4:3 focal media on the cards above */
 .project--split .media img,.project--split .media video{aspect-ratio:4/3;object-fit:cover}
 .now-card{background:linear-gradient(180deg,#fffdfb 0%,var(--card-2) 100%)}
