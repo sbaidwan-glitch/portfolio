@@ -235,39 +235,37 @@
         </article>
 
         <!-- Lab Helper -->
-        <article class="project project--split card">
-          <div class="p-gallery">
-            <figure class="media">
-              <video controls preload="metadata" playsinline poster="/assets/video/lab-helper-poster.jpg?v=20261010">
-                <source src="/assets/video/lab-helper.mp4?v=20261010" type="video/mp4">
-                Your browser doesn’t support embedded video.
-              </video>
-              <figcaption>Lab Helper capping a full rack of tubes.</figcaption>
-            </figure>
-            <figure class="media">
-              <img src="/assets/img/lab-cad.webp?v=20261010" alt="CAD model of the Lab Helper capper, showing the hinged press above a rack holding a row of tubes" loading="lazy" width="1400" height="956">
-              <figcaption>CAD of the capper: hinged press and tube rack.</figcaption>
-            </figure>
+        <article class="project card">
+          <div class="p-media-col">
+            <div class="slideshow" data-slideshow data-static>
+              <div class="slides">
+                <figure class="slide slide--video is-active" data-caption="Lab Helper capping a full rack of tubes.">
+                  <video src="/assets/video/lab-helper.mp4?v=20261010" poster="/assets/video/lab-helper-poster.jpg?v=20261010" controls muted loop playsinline preload="metadata" aria-label="Lab Helper capping a full rack of microcentrifuge tubes"></video>
+                </figure>
+                <figure class="slide slide--photo" data-caption="CAD of the capper: hinged press and tube rack.">
+                  <img src="/assets/img/lab-cad.webp?v=20261010" alt="CAD model of the Lab Helper capper, showing the hinged press above a rack holding a row of tubes" loading="lazy" width="1400" height="956">
+                </figure>
+              </div>
+              <div class="slide-dots" role="tablist" aria-label="Lab Helper video and CAD">
+                <button class="dot is-active" type="button" role="tab" aria-selected="true" aria-label="Clip: capping a full rack"></button>
+                <button class="dot" type="button" role="tab" aria-selected="false" aria-label="CAD of the capper"></button>
+              </div>
+              <p class="slide-caption" aria-live="polite">Lab Helper capping a full rack of tubes.</p>
+            </div>
           </div>
           <div class="p-body">
-            <div class="p-top">
-              <span class="date">Fall 2025 · Intro to Engineering Design</span>
-              <span class="chip chip-team">Coursework · Team</span>
-            </div>
+            <p class="proj-label">Intro to Engineering Design (E4) · Team of 5 · Fall 2025</p>
             <h3>Lab Helper — Microcentrifuge Tube Capper</h3>
-            <p class="one-liner">A bench tool that caps a rack of tubes 4.7× faster than by hand.</p>
-            <p class="desc">
-              Our client, a biology lab technician, spent a chunk of every week snapping lids onto
-              microcentrifuge tubes by hand, which is slow and hard on the wrists. For E4 we designed a hinged
-              press that closes a full row at once, paired with a 3D-printed rack that holds the tubes
-              steady and survives ethanol sterilization. Everything had to cost under $30 and not damage
-              the tubes or the user’s gloves.
+            <p class="one-liner">
+              Our client, a biology lab technician, capped tubes by hand every week. We built a hinged
+              press that closes a full row at once, over a 3D-printed rack that survives ethanol
+              sterilization.
             </p>
-            <p class="result">
-              <span>Result</span>
-              80 tubes capped in 51 seconds versus about four minutes by hand: 4.7× faster, for under $30.
-            </p>
-            <p class="team">Team: <span>Samara Baidwan, Sophie, Luna, Soraya, Lucas</span></p>
+            <ul class="pcard-stats">
+              <li><b>4.7×</b><span>faster than capping by hand</span></li>
+              <li><b>51 s</b><span>to cap 80 tubes (vs ~4 min)</span></li>
+              <li><b>&lt;$30</b><span>total build cost</span></li>
+            </ul>
           </div>
         </article>
 
@@ -354,6 +352,6 @@
   </div>
 </footer>
 
-<script src="/assets/js/main.js?v=20261028" defer></script>
+<script src="/assets/js/main.js?v=20261029" defer></script>
 </body>
 </html>

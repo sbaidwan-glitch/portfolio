@@ -434,6 +434,12 @@
     fetchWind();
   }
 
+  /* card clips that autoplay (muted, looping) stay parked on their poster
+     for anyone who has asked for reduced motion */
+  if (reduceMotion) {
+    document.querySelectorAll('video[autoplay]').forEach(v => { v.autoplay = false; v.pause(); });
+  }
+
   const year = document.getElementById('year');
   if (year) year.textContent = new Date().getFullYear();
 })();
