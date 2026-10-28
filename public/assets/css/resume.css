@@ -2,7 +2,7 @@
    Résumé page
    ============================================================ */
 
-.r-page{padding:clamp(6.5rem,12vw,8rem) 0 clamp(3rem,6vw,4.5rem)}
+.r-page{padding:clamp(2.2rem,5vw,3.4rem) 0 clamp(3rem,6vw,4.5rem)}
 .r-wrap{max-width:880px}
 .r-head{margin:0 0 clamp(2rem,4vw,2.8rem)}
 .r-head .proj-label{margin-bottom:.9rem}
@@ -10,7 +10,7 @@
 .r-intro{margin:0 0 1.6rem;font-size:1.02rem;color:var(--ink-2)}
 .r-download{gap:.45rem}
 
-.nav-links a[aria-current="page"],.mobile-menu a[aria-current="page"]{color:var(--ink);background:rgba(74,40,15,.06)}
+.nav-links a[aria-current="page"],.mobile-menu a[aria-current="page"]{color:var(--ink);background:var(--hover)}
 
 .r-doc{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);box-shadow:var(--shadow);padding:clamp(1.4rem,4vw,2.8rem)}
 .r-sec{margin:0 0 2.1rem}
