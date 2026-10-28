@@ -1,9 +1,11 @@
 # Samara Baidwan — portfolio site
 
-Static site served from `public/` on a ClodHost server (`/var/www/sbaidwan.clodhost.com`).
-No build step: plain HTML, one shared stylesheet (`public/assets/css/styles.css`), one
-script (`public/assets/js/main.js`). Changes go through a branch and a pull request that
-Samara reviews; the server pulls `main` to deploy.
+Static site in `public/`, live at https://samarabaidwan.com. No build step: plain HTML,
+one shared stylesheet (`public/assets/css/styles.css`), one script
+(`public/assets/js/main.js`). Changes go through a branch and a pull request that
+Samara reviews. Merging to `main` publishes automatically via GitHub Pages
+(`.github/workflows/pages.yml`, which uploads `public/`). The old ClodHost server
+(`/var/www/sbaidwan.clodhost.com`) may still pull `main` as a backup copy.
 
 ## Content rules (these override any request to "make it sound better")
 
@@ -52,8 +54,10 @@ Samara reviews; the server pulls `main` to deploy.
 
 ## Domain
 
-Canonical and `og:url` tags hard-code `https://sbaidwan.clodhost.com`. When a custom
-domain is added, find-and-replace that origin across `public/**/*.html`.
+samarabaidwan.com is registered at Cloudflare (renews yearly, ~$10) and points at GitHub
+Pages (DNS only, not proxied). Canonical and `og:url` tags hard-code
+`https://samarabaidwan.com`; new pages need the same. Site-root paths (`/assets/...`)
+depend on being served from the domain root, so don't move the site under a subpath.
 
 ## Files not in git
 
