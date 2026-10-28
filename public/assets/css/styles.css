@@ -179,14 +179,11 @@ html[data-theme="light"] .theme-toggle .i-moon{display:block}
 .a-title{font-size:clamp(2.2rem,5.4vw,3.4rem);line-height:1.02;letter-spacing:-.03em;margin:0 0 1.6rem}
 .a-lead{font-size:1.25rem;line-height:1.55;color:var(--ink);margin:0 0 1.2rem}
 .a-text p{margin:0 0 1.2rem;color:var(--ink-2)}
-.a-photo{flex:1 1 18rem;max-width:25rem;margin:0}
+.a-side{flex:1 1 18rem;max-width:25rem;display:flex;flex-direction:column;gap:1.4rem}
+.a-photo{margin:0}
 .a-photo img{width:100%;aspect-ratio:4/5;object-fit:cover;border-radius:var(--radius);border:1px solid var(--border)}
 .a-photo figcaption{display:flex;justify-content:space-between;gap:1rem;margin-top:.7rem;font-family:var(--mono);font-size:.74rem;letter-spacing:.04em;text-transform:uppercase;color:var(--ink-3)}
-.a-life{display:flex;flex-wrap:wrap;align-items:flex-start;gap:1.2rem 1.6rem;margin-top:2.2rem;padding-top:1.8rem;border-top:1px solid var(--border)}
-.a-life figure{flex:1 1 12rem;max-width:16rem;margin:0}
-.a-life img{width:100%;aspect-ratio:1/1;object-fit:cover;object-position:50% 30%;border-radius:var(--radius-sm);border:1px solid var(--border)}
-.a-life p{flex:2 1 16rem;margin:0}
-.a-cta{display:flex;flex-wrap:wrap;gap:.7rem;margin-top:2.2rem}
+.a-cta{display:flex;flex-wrap:wrap;gap:.7rem}
 
 /* ---------- projects ---------- */
 .projects{display:grid;gap:clamp(1.2rem,2.6vw,1.7rem)}
