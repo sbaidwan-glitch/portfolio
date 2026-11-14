@@ -1,7 +1,7 @@
 /* ============================================================
    Samara Baidwan — portfolio ("Field Station")
-   Dark navy by default; html[data-theme="light"] switches the
-   tokens. Components use tokens only, never raw colors.
+   Light by default (data-theme="light" on <html>); dark is the
+   alternate. Components use tokens only, never raw colors.
    ============================================================ */
 
 :root{

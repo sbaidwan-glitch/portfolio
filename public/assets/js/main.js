@@ -209,7 +209,7 @@
     lightbox.addEventListener('click', e => { if (e.target === lightbox) lightbox.close(); });
   }
 
-  /* theme. Dark is the default; a tiny inline script in each page's <head>
+  /* theme. Light is the default (data-theme="light" on <html>); a tiny inline script in each page's <head>
      applies a saved choice before first paint, so this only handles clicks. */
   const root = document.documentElement;
   const themeMeta = document.querySelector('meta[name="theme-color"]');

@@ -27,7 +27,7 @@ Samara reviews. Merging to `main` publishes automatically via GitHub Pages
 
 ## Design system: "Field Station"
 
-- Dark navy by default; light theme via the toggle (`html[data-theme="light"]`), stored
+- Light by default (`data-theme="light"` on each page's `<html>`); dark navy via the toggle, stored
   in `localStorage` under `theme`. Each page sets it in a tiny inline `<head>` script so
   there's no flash. All colors come from the tokens at the top of `styles.css`; don't
   hard-code colors in components.
