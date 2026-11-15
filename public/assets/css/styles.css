@@ -216,7 +216,7 @@ html[data-theme="light"] .theme-toggle .i-moon{display:block}
 /* what this person did, kept visually separate from what the team found so
    the two never read as the same claim */
 .contribution{
-  font-size:.92rem;color:var(--ink-2);max-width:82ch;
+  font-size:inherit;color:var(--ink-2);max-width:74ch;
   margin:0 0 1.2rem;padding-left:1rem;border-left:3px solid var(--border-2);
 }
 .contribution span{display:block;font-size:.7rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;margin-bottom:.35rem;color:var(--ink-3)}
